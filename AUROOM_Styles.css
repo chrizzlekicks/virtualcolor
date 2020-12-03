@@ -73,6 +73,7 @@ HEADER
     width: 100%;
     background: transparent;
     display: inline-block;
+    z-index: 1;
 }
 
 .menu-container::before {
@@ -333,8 +334,8 @@ MAIN TEAM
 .value-container {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 10.76%;
+    margin-right: 10.76%;
 }
 
 .value {
@@ -394,11 +395,57 @@ MAIN NEWS
     display: block;
     width: 100%;
     height: 245px;
+    z-index: -1;
 }
 
 .heading {
     position: relative;
+    display: block;
     text-align: center;
+}
+
+.news-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10.76%;
+    margin-right: 10.76%;
+    margin-bottom: 25px;
+}
+
+.news-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    margin: 25px;
+}
+
+.news img {
+    margin-bottom: 10px;
+}
+
+.news p {
+    margin-bottom: 5px;
+}
+
+.news hr {
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.icon-text {
+    display: flex;
+}
+
+.icon-text p {
+    padding-left: 20px;
 }
 
 /*
