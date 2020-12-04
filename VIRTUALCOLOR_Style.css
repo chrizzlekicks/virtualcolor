@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+/*
+=============
+GLOBAL STYLES
+=============
+*/
+
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: 0.01rem;
+  margin-bottom: 1rem;
+  color: #004a96;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #004a96;
+  color: white;
+  font-weight: 700;
+  border-style: none;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #adadad;
+  cursor: pointer;
+}
+
+/*
+====== 
+HEADER
+======
+*/
+
+.header-container {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  display: inline-block;
+  z-index: 1;
+}
+
+.menu-container::before {
+  content: "";
+  display: block;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu-container::after {
+  content: "";
+  display: block;
+  flex: 1;
+  background-color: #004a96;
+}
+
+.menu-container {
+  display: flex;
+  margin-top: 25px;
+  height: 80px;
+  width: 100%;
+  position: relative;
+  color: #fff;
+}
+
+.menu-content {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  display: flex;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.top-nav a:hover {
+  color: #dcdcdc;
+}
+
+.basf-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 350px;
+}
+
+.basf-menu li {
+  margin-right: 50px;
+  display: inline;
+  color: white;
+}
+
+.menu-action {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-action li {
+  margin-right: 25px;
+  display: inline;
+  color: white;
+}
+
+.nav-contact-btn {
+  margin-right: 30px;
+  background-color: #dcdcdc;
+}
+
+#search {
+  margin-right: 25px;
+}
+
+#world {
+  margin-right: 30px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-left: 20px;
+  background-color: #004a96;
+}
+
+.logo {
+  background: url(./Img/logo.svg);
+  height: 43px;
+  width: 120px;
+  margin: 20px;
+}
+
+
+body {
+  font-family: roboto;
+}
+
+button {
+  padding: 10px 20px;
+    background-color:#004A96 ;
+    color:#ffff; 
+    padding: 10px 10px;
+    border: none;
+  }
+
+body, html {
+    height: 100%;
+    padding-bottom: 100;
+}
+
+p {
+  padding-bottom: 30px;
+}
+
+.imgs {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 100%;
+  height: 768px;
+}
+
+/*
+====== 
+LP Styles
+======
+*/
+
+.hero-image {
+  padding-top:400px;
+  background-image: linear-gradient(rgba(197, 197, 197, 0), rgb(255, 255, 255)), url("img/AUVOT_Mea_Doxxing Blue_Side1.png");
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  padding-top: 600px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(8, 8, 8);
+}
+
+/*
+====== 
+Feture Section Styles
+======
+*/
+
+.features-img-right {
+  display: grid;
+  grid-template-columns: 15% 20% 15% 50%;
+  grid-template-rows: auto;
+}
+
+.discover-text {
+  grid-column: 2;
+  align-self: center;
+}
+
+.discover-img {
+  background-image: url(./Img/Domes.png);
+  grid-column: 4;
+}
+
+.features-img-left {
+  display: grid;
+  grid-template-columns: 50% 15% 20% 15%;
+  grid-template-rows: auto;
+}
+
+.experience-img {
+  background-image: url(./Img/275790_basfauroom_122475.jpg);
+  grid-column: 1;
+}
+
+.experience-text {
+  grid-column: 3;
+  align-self: center;
+  text-align: right;
+}
+
+.logo-slider {
+  background-color: #333;
+  height: 200px;
+}
+
+/*
+======
+FOOTER
+======
+*/
+
+footer {
+  height: 160px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+}
+
+
