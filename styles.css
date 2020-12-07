@@ -152,16 +152,18 @@ HEADER
 
 .menu-container {
     display: flex;
-    margin-top: 25px;
+    margin-top: 40px;
     height: 80px;
     width: 100%;
     position: relative;
     color: #fff;
+    flex: 0 0 auto;
 }
 
 .menu-content {
     margin-left: auto;
     margin-right: auto;
+    width: 78.48%;
     height: 100%;
     display: flex;
 }
@@ -170,12 +172,17 @@ HEADER
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 1 1 0;
     font-weight: 700;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
 .top-nav a:hover {
     color: #dcdcdc;
+}
+
+.nav-toggle {
+    display: none;
 }
 
 .basf-menu {
@@ -199,10 +206,12 @@ HEADER
 .menu-action li {
     margin-right: 25px;
     display: inline;
-    color: white;
+    color: #fff;
 }
 
 .nav-contact-btn {
+    display: flex;
+    align-self: center;
     margin-right: 30px;
     background-color: #dcdcdc;
 }
@@ -232,26 +241,87 @@ HEADER
 }
 
 @media (max-width: 1199.9px) and (min-width: 768px) {
-    .menu-container {
-        margin-top: 35px;
+
+    .menu-content {
+        width: 90.6%;
+    }
+
+    .nav-toggle {
+        display: flex;
+        align-self: center;
+        justify-content: space-around;
+        position: relative;
+        color: #fff;
+        height: auto;
+        margin-right: auto;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        align-self: center;
+        padding: 0;
+        margin-right: 25px;
+        background-color: transparent;
+        height: auto;
+        transition: ease-in-out 0.5s;
+    }
+
+    .hamburger-btn:hover {
+        transform: rotate(90deg);
     }
     
     .basf-menu {
         display: none;
     }
+
+    .nav-contact-btn {
+        padding: 5px 10px;
+    }
 }
 
 @media screen and (max-width: 767.9px) {
+
     .menu-container {
-        margin-top: 40px;
+        margin-top: 25px;
         height: 60px;
+    }
+
+    .menu-content {
+        width: 90.6%;
+    }
+
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        color: #fff;
+        height: auto;
     }
 
     .basf-menu {
         display: none;
     }
 
-    .menu-action {
+    .hamburger-btn {
+        display: flex;
+        align-self: center;
+        padding: 0;
+        margin-right: 25px;
+        background-color: transparent;
+        height: auto;
+        transition: ease-in-out 0.5s;
+    }
+
+    .hamburger-btn:hover {
+        transform: rotate(90deg);
+    }
+
+    .menu-action li {
+        display: none;
+    }
+
+    .nav-contact-btn {
         display: none;
     }
 
@@ -467,16 +537,28 @@ MAIN AUROOM
 }
 
 @media (max-width: 1199.9px) and (min-width: 768px) {
+
     .auroom-hero-text {
-        padding-top: 400px;
+        padding-top: 450px;
+    }
+
+    .benefit-container {
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
     
     .benefits {
         flex-flow: column nowrap;
+        margin: 0 50px;
+    }
+
+    .benefit {
+        padding: 20px;
     }
 }
 
 @media screen and (max-width: 767.9px) {
+
     .auroom-hero-text {
         padding-top: 300px;
     }
@@ -485,6 +567,10 @@ MAIN AUROOM
         flex-flow: column nowrap;
         margin-left: 10%;
         margin-right: 10%;
+    }
+
+    .benefit {
+        padding: 10px;
     }
 }
 
@@ -504,8 +590,8 @@ MAIN TEAM
     align-items: flex-end;
 }
 
-.hero-items h1 {
-    margin-top: 50px;
+.hero-text {
+    margin-top: 20px;
 }
 
 .hero--2 {
@@ -531,7 +617,7 @@ MAIN TEAM
 }
 
 .team-container {
-    padding: 75px;
+    padding: 50px;
     width: auto;
     height: auto;
 }
@@ -540,7 +626,7 @@ MAIN TEAM
     margin-bottom: 50px;
 }
 
-.team-imgs {
+.team-members {
     padding: 25px;
     display: flex;
     align-items: center;
@@ -549,20 +635,88 @@ MAIN TEAM
     flex-flow: row wrap;
 }
 
-.team-members {
+.team-imgs {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 25px;
 }
 
-.team-members img {
+.team-imgs img {
     transition: ease-out 0.5s;
 }
 
-.team-members img:hover {
+.team-imgs img:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+@media (max-width: 1199.9px) and (min-width: 768px) {
+
+    .hero-items {
+        margin-bottom: 25px;
+    }
+
+    .value-container {
+        flex-flow: column nowrap;
+    }
+    
+    .value {
+        padding-bottom: 40px;
+    }
+
+    .team-container h1 {
+        margin-bottom: 20px;
+    }
+
+    .team-imgs {
+        padding: 20px;
+    }
+
+    .team-imgs img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+    
+    .hero-items {
+        margin-bottom: auto;
+    }
+
+    .value-container {
+        flex-flow: column nowrap;
+    }
+
+    .value {
+        padding: 10px 10px 20px;
+    }
+
+    p {
+        padding: 0;
+    }
+
+    .team-container {
+        padding: 25px;
+    }
+
+    .team-container h1 {
+        margin-bottom: 20px;
+    }
+
+    .team-members {
+        flex-direction: column;
+    }
+
+    .team-imgs {
+        padding: 10px;
+    }
+
+    .team-imgs img {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /*
