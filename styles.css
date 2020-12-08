@@ -370,6 +370,27 @@ MAIN INDEX
 ==========
 */
 
+.index-hero {
+    background-image: linear-gradient(to bottom, transparent, white), url(./Img/AUVOT_Mea_Doxxing\ Blue_Side1.jpg);
+    background-size: cover;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-content {
+    margin-top: -150px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    justify-content: center;
+}
+
+.hero-content p {
+    text-align: center;
+}
+
 .lp-hero-image {
     padding-top:400px;
     background-image: linear-gradient(rgba(197, 197, 197, 0), rgb(255, 255, 255)), url("img/AUVOT_Mea_Doxxing Blue_Side1.png");
@@ -421,11 +442,73 @@ MAIN INDEX
     align-self: center;
     text-align: right;
 }
+
+.news-teaser {
+    display: flex;
+    
+    flex-direction: row-reverse;
+    width: 325px;
+    margin: 25px;
+}
   
 .logo-slider {
     background-color: #333;
     height: 200px;
 }
+
+/*
+=============
+VIRTUAL COLOR
+=============
+*/
+
+.vc-hero {
+    background-image: linear-gradient(to bottom, transparent, white), url(./Img/basf_surface_solutions_auroom.jpg.dynamic.1280w720h.9672c6af986fb1a2a70312537bb3981aff5ba23d.jpeg);
+    background-size: cover;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.content-vc {
+    width: 50%;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3;
+}
+
+.feature-item {
+    display: flex;
+}
+ .feature-centered {
+    display: grid;
+    grid-template-columns: 25% 20% 30% 15%;
+    justify-content: center;
+ }
+
+.dot {
+    height: 45px;
+    width: 45px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }  
+
+.container-logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+  .container-logo div {
+      border: 1px #ccc solid;
+      padding: 10px;
+      background-color: #bbb;
+      width: 400px;
+  }
 
 /*
 ===========
