@@ -166,6 +166,11 @@ HEADER
     width: 78.48%;
     height: 100%;
     display: flex;
+    align-content: center;
+}
+
+.nav-toggle {
+    display: none;
 }
 
 .top-nav {
@@ -179,10 +184,6 @@ HEADER
 
 .top-nav a:hover {
     color: #dcdcdc;
-}
-
-.nav-toggle {
-    display: none;
 }
 
 .basf-menu {
@@ -252,8 +253,13 @@ HEADER
     margin: 20px;
 }
 
-@media (max-width: 1216.9px) and (min-width: 768px) {
+.menu-container-overlay {
+    display: none;
+    overflow: hidden;
+}
 
+@media (max-width: 1216.9px) and (min-width: 768px) {
+    
     .menu-content {
         width: 90.6%;
     }
@@ -281,9 +287,64 @@ HEADER
     .hamburger-btn:hover {
         transform: rotate(90deg);
     }
-    
+
+    .overlay {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.85);
+        top: 0;
+        left: 0;
+        z-index: 2;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+    }
+
     .basf-menu {
         display: none;
+    }
+
+    .menu-container-overlay--active {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90.6%;
+        max-width: 1246px;
+        flex: 0 0 auto;
+        align-items: center;
+        display: flex;
+    }
+
+    .menu-content-overlay {
+        width: 100%;
+        align-items: center;
+        display: flex;
+    }
+
+    .basf-menu-mobile {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        padding-top: 20px;
+        justify-content: stretch;
+    }
+
+    .menu-link {
+        font-size: 2rem;
+        border-bottom: 1px solid #dcdcdc;
+        transition: ease-in-out 0.25s;
+    }
+    
+    .menu-link a {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .menu-link:hover {
+        padding-left: 10px;
+        background-color: rgba(234, 234, 234, 0.5);
     }
 
     .nav-contact-btn {
@@ -313,6 +374,61 @@ HEADER
 
     .basf-menu {
         display: none;
+    }
+
+    .overlay {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.85);
+        top: 0;
+        left: 0;
+        z-index: 2;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-container-overlay--active {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90.6%;
+        max-width: 1246px;
+        flex: 0 0 auto;
+        align-items: center;
+        display: flex;
+    }
+
+    .menu-content-overlay {
+        width: 100%;
+        align-items: center;
+        display: flex;
+    }
+
+    .basf-menu-mobile {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        padding-top: 10px;
+        justify-content: stretch;
+    }
+
+    .menu-link {
+        font-size: 1.5rem;
+        border-bottom: 1px solid #dcdcdc;
+        transition: ease-in-out 0.25s;
+    }
+    
+    .menu-link a {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .menu-link:hover {
+        padding-left: 5px;
+        background-color: rgba(234, 234, 234, 0.5);
     }
 
     .hamburger-btn {
@@ -562,6 +678,11 @@ MAIN AUROOM
         grid-template-rows: auto;
     }
 
+    .auroom-hero-text {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
     .see-img {
         height: 536px;
     }
@@ -617,12 +738,14 @@ MAIN AUROOM
 
     .auroom-hero-text {
         padding-top: 350px;
+        margin-left: 10%;
+        margin-right: 10%;
     }
     
     .see-img {
         grid-column: 1;
         grid-row: 1;
-        height: 384px;
+        height: 350px;
     }
 
     .see-text {
@@ -634,7 +757,7 @@ MAIN AUROOM
     .lib-img {
         grid-column: 1;
         grid-row: 1;
-        height: 384px;
+        height: 350px;
     }
     
     .lib-text {
@@ -646,7 +769,7 @@ MAIN AUROOM
     .trend-img {
         grid-column: 1;
         grid-row: 1;
-        height: 384px;
+        height: 350px;
     }
     
     .trend-text {
@@ -658,7 +781,7 @@ MAIN AUROOM
     .compare-img {
         grid-column: 1;
         grid-row: 1;
-        height: 384px;
+        height: 350px;
     }
     
     .compare-text {
@@ -901,6 +1024,22 @@ MAIN NEWS
 .icon-text p {
     padding-bottom: 0;
     padding-left: 20px;
+}
+
+@media (max-width: 1216.9px) and (min-width: 768px) {
+    
+    .news-slider {
+        display: flex;
+        overflow: scroll hidden;
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+
+    .news-slider {
+        display: flex;
+        overflow: scroll hidden;
+    }
 }
 
 /*
