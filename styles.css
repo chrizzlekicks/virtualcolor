@@ -942,28 +942,43 @@ MAIN TEAM
 }
 
 .team-members {
-    padding: 50px;
+    columns: 3;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    flex-flow: row wrap;
-}
-
-.team-imgs {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 25px;
 }
 
-.team-imgs img {
+.team-toggler-link img {
+    padding: 1.5rem;
     transition: ease-out 0.5s;
 }
 
-.team-imgs img:hover {
+.team-toggler-link img:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.team-toggler-details {
+    display: none;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.is-open {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    overflow: visible;
+    opacity: 1;
+    position: absolute;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.team-member-title {
+    margin-bottom: 0.25rem;
+    font-weight: 100;
 }
 
 @media (max-width: 1216.9px) and (min-width: 768px) {
@@ -987,15 +1002,6 @@ MAIN TEAM
     .team-container h1 {
         margin-bottom: 20px;
     }
-
-    .team-imgs {
-        padding: 20px;
-    }
-
-    .team-imgs img {
-        width: 250px;
-        height: 250px;
-    }
 }
 
 @media screen and (max-width: 767.9px) {
@@ -1008,8 +1014,15 @@ MAIN TEAM
         margin-bottom: 20px;
     }
 
+    .hero-text {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
     .value-container {
         flex-flow: column nowrap;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .value {
@@ -1032,13 +1045,13 @@ MAIN TEAM
         flex-direction: column;
     }
 
-    .team-imgs {
+    .team-toggler-link {
         padding: 10px;
     }
 
-    .team-imgs img {
-        width: 200px;
-        height: 200px;
+    .team-toggler-link img {
+        width: 250px;
+        height: 250px;
     }
 }
 
