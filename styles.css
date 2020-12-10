@@ -875,16 +875,87 @@ FOOTER
 ======
 */
 
-footer {
-    height: 160px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer-container {
+    padding: 4rem;
 }
 
-footer p {
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #7c7c7c;
+    padding-bottom: 4rem;
+}
+
+.socialmedia * {
+    display: flex;
+
+}
+
+.socialmedia {
+    background-color: grey;
+}
+
+.socialmenu {
+
+    background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.socialmenu-header {
+    background-color: lightslategray;
+    text-align: center;
+    
+}
+
+socialmenu-header h2 {
+    margin: auto 0;
+}
+
+.socialmenu-icons {
+    background-color: lightslategrey;
+}
+
+.socialmenu-icons li{
+    padding: 10px;
+}
+
+/*footer p {
     text-align: center;
     color: white;
+}*/
+
+.footer-heading {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+    padding-bottom: 1.25rem;
 }
+
+.footer-heading h2 {
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.footer-nav {
+    background-color: hotpink;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+    }
+
+
+.footer-container {
+    padding: 10px;
+    justify-content: center;
+    width: 80%;
+    background-color: green;
+}
+.legal p {
+    background-color: indigo;
+    margin: auto;
+    padding: 5px;
+    }
