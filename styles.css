@@ -476,15 +476,23 @@ VIRTUAL COLOR
 }
 
 .feature-list {
-    display: flex;
+    background-color: lime;
     flex-direction: column;
     grid-column: 3;
 }
 
 .feature-item {
-    display: flex;
+    background-color: linen;
+    display: flex; 
 }
+
+.feature-text p {
+    display: flex;
+    align-self: center;
+}
+
  .feature-centered {
+    background-color: maroon;
     display: grid;
     grid-template-columns: 25% 20% 30% 15%;
     justify-content: center;
@@ -875,71 +883,66 @@ FOOTER
 ======
 */
 
-.footer-container {
-    padding: 4rem;
-}
 
 .footer-wrapper {
     display: flex;
     justify-content: center;
     background-color: #7c7c7c;
-    padding-bottom: 4rem;
+    padding: 2rem 0;
 }
 
 .socialmedia * {
     display: flex;
-
+    align-items: center;
 }
 
 .socialmedia {
-    background-color: grey;
+    padding-bottom: 40px;
+}
+
+.footer-h2 {
+    margin-bottom: 0;
+    color: #fff;
 }
 
 .socialmenu {
-
-    background-color: lightblue;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-}
-
-.socialmenu-header {
-    background-color: lightslategray;
     text-align: center;
     
 }
 
-socialmenu-header h2 {
-    margin: auto 0;
+.socialmenu-header {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
 }
 
-.socialmenu-icons {
-    background-color: lightslategrey;
+.socialmenu-icons a {
+        color: #adadad;
+        padding: 0 50px 0 0;
 }
 
 .socialmenu-icons li{
-    padding: 10px;
+    margin-right: 1.25rem;
 }
 
-/*footer p {
-    text-align: center;
-    color: white;
-}*/
 
 .footer-heading {
     display: flex;
+    width: 25%;
     flex-direction: column;
-    margin-right: 4rem;
     padding-bottom: 1.25rem;
 }
 
 .footer-heading h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     color: #fff;
 }
 
 .footer-nav {
-    background-color: hotpink;
     color: #fff;
     display: flex;
     flex-wrap: wrap;
@@ -949,13 +952,11 @@ socialmenu-header h2 {
 
 
 .footer-container {
-    padding: 10px;
     justify-content: center;
-    width: 80%;
-    background-color: green;
+    width: 70%;
 }
+
 .legal p {
-    background-color: indigo;
+    color: #adadad;
     margin: auto;
-    padding: 5px;
     }
