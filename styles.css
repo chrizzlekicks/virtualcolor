@@ -66,7 +66,7 @@ p {
     padding-bottom: 2rem;
 }
 
-@media (max-width: 1199.9px) and (min-width: 768px) {
+@media (max-width: 1216.9px) and (min-width: 768px) {
     h1, h2, h3, h4 {
         margin-bottom: 1.25rem;
     }
@@ -166,6 +166,11 @@ HEADER
     width: 78.48%;
     height: 100%;
     display: flex;
+    align-content: center;
+}
+
+.nav-toggle {
+    display: none;
 }
 
 .top-nav {
@@ -179,10 +184,6 @@ HEADER
 
 .top-nav a:hover {
     color: #dcdcdc;
-}
-
-.nav-toggle {
-    display: none;
 }
 
 .basf-menu {
@@ -218,10 +219,22 @@ HEADER
 
 #search {
     margin-right: 25px;
+    transition: ease-in-out 0.5s;
 }
 
 #world {
     margin-right: 30px;
+    transition: ease-in-out 0.25s;
+}
+
+#world:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+
+#search:hover {
+    transform: scale(1.5);
+    cursor: pointer;
 }
 
 .logo-container {
@@ -240,8 +253,13 @@ HEADER
     margin: 20px;
 }
 
-@media (max-width: 1199.9px) and (min-width: 768px) {
+.menu-container-overlay {
+    display: none;
+    overflow: hidden;
+}
 
+@media (max-width: 1216.9px) and (min-width: 768px) {
+    
     .menu-content {
         width: 90.6%;
     }
@@ -269,9 +287,64 @@ HEADER
     .hamburger-btn:hover {
         transform: rotate(90deg);
     }
-    
+
+    .overlay {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.85);
+        top: 0;
+        left: 0;
+        z-index: 2;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+    }
+
     .basf-menu {
         display: none;
+    }
+
+    .menu-container-overlay--active {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90.6%;
+        max-width: 1246px;
+        flex: 0 0 auto;
+        align-items: center;
+        display: flex;
+    }
+
+    .menu-content-overlay {
+        width: 100%;
+        align-items: center;
+        display: flex;
+    }
+
+    .basf-menu-mobile {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        padding-top: 20px;
+        justify-content: stretch;
+    }
+
+    .menu-link {
+        font-size: 2rem;
+        border-bottom: 1px solid #dcdcdc;
+        transition: ease-in-out 0.25s;
+    }
+    
+    .menu-link a {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .menu-link:hover {
+        padding-left: 10px;
+        background-color: rgba(234, 234, 234, 0.5);
     }
 
     .nav-contact-btn {
@@ -301,6 +374,61 @@ HEADER
 
     .basf-menu {
         display: none;
+    }
+
+    .overlay {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.85);
+        top: 0;
+        left: 0;
+        z-index: 2;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-container-overlay--active {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90.6%;
+        max-width: 1246px;
+        flex: 0 0 auto;
+        align-items: center;
+        display: flex;
+    }
+
+    .menu-content-overlay {
+        width: 100%;
+        align-items: center;
+        display: flex;
+    }
+
+    .basf-menu-mobile {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        padding-top: 10px;
+        justify-content: stretch;
+    }
+
+    .menu-link {
+        font-size: 1.5rem;
+        border-bottom: 1px solid #dcdcdc;
+        transition: ease-in-out 0.25s;
+    }
+    
+    .menu-link a {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .menu-link:hover {
+        padding-left: 5px;
+        background-color: rgba(234, 234, 234, 0.5);
     }
 
     .hamburger-btn {
@@ -342,7 +470,7 @@ MAIN GLOBAL
     background-size: contain;
     position: relative;
     max-width: 100%;
-    height: 768px;
+    height: 668px;
 }
 
 .hero-items {
@@ -548,7 +676,7 @@ MAIN AUROOM
 .auroom-hero-text {
     margin-left: 25%;
     margin-right: 25%;
-    padding-top: 600px;
+    padding-top: 750px;
     text-align: center;
 }
 
@@ -627,10 +755,43 @@ MAIN AUROOM
     width: 100px;
 }
 
-@media (max-width: 1199.9px) and (min-width: 768px) {
+@media (max-width: 1216.9px) and (min-width: 768px) {
+
+    .containers-img-right {
+        display: grid;
+        grid-template-columns: 5% 30% 5% 60%;
+        grid-template-rows: auto;
+    }
+    
+    .containers-img-left {
+        display: grid;
+        grid-template-columns: 60% 5% 30% 5%;
+        grid-template-rows: auto;
+    }
 
     .auroom-hero-text {
-        padding-top: 450px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .see-img {
+        height: 536px;
+    }
+
+    .lib-img {
+        height: 536px;
+    }
+
+    .trend-img {
+        height: 536px;
+    }
+
+    .compare-img {
+        height: 536px;
+    }
+
+    .auroom-hero-text {
+        padding-top: 550px;
     }
 
     .benefit-container {
@@ -650,8 +811,79 @@ MAIN AUROOM
 
 @media screen and (max-width: 767.9px) {
 
+    .containers-img-right {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto 20%;
+        row-gap: 1rem;
+        padding: 20px;
+    }
+
+    .containers-img-left {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto 20%;
+        row-gap: 1rem;
+        padding: 20px;
+    }
+
     .auroom-hero-text {
-        padding-top: 300px;
+        padding-top: 350px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .see-img {
+        grid-column: 1;
+        grid-row: 1;
+        height: 350px;
+    }
+
+    .see-text {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+    
+    .lib-img {
+        grid-column: 1;
+        grid-row: 1;
+        height: 350px;
+    }
+    
+    .lib-text {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+    
+    .trend-img {
+        grid-column: 1;
+        grid-row: 1;
+        height: 350px;
+    }
+    
+    .trend-text {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+    
+    .compare-img {
+        grid-column: 1;
+        grid-row: 1;
+        height: 350px;
+    }
+    
+    .compare-text {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+
+    .benefit-container {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     .benefits {
@@ -686,7 +918,7 @@ MAIN TEAM
 }
 
 .hero--2 {
-    background: linear-gradient(to bottom, #bcbcbc, white);
+    background: linear-gradient(to bottom, #bcbcbc, #fff);
 }
 
 .value-container {
@@ -718,31 +950,50 @@ MAIN TEAM
 }
 
 .team-members {
-    padding: 25px;
+    columns: 3;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    flex-flow: row wrap;
-}
-
-.team-imgs {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 25px;
 }
 
-.team-imgs img {
+.team-toggler-link img {
+    padding: 1.5rem;
     transition: ease-out 0.5s;
 }
 
-.team-imgs img:hover {
+.team-toggler-link img:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
-@media (max-width: 1199.9px) and (min-width: 768px) {
+.team-toggler-details {
+    display: none;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.is-open {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    overflow: visible;
+    opacity: 1;
+    position: absolute;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.team-member-title {
+    margin-bottom: 0.25rem;
+    font-weight: 100;
+}
+
+@media (max-width: 1216.9px) and (min-width: 768px) {
+
+    .ben-brain {
+        height: 442px;
+    }
 
     .hero-items {
         margin-bottom: 25px;
@@ -759,25 +1010,27 @@ MAIN TEAM
     .team-container h1 {
         margin-bottom: 20px;
     }
-
-    .team-imgs {
-        padding: 20px;
-    }
-
-    .team-imgs img {
-        width: 250px;
-        height: 250px;
-    }
 }
 
 @media screen and (max-width: 767.9px) {
+
+    .ben-brain {
+        height: 328px;
+    }
     
     .hero-items {
-        margin-bottom: auto;
+        margin-bottom: 20px;
+    }
+
+    .hero-text {
+        margin-right: 10%;
+        margin-left: 10%;
     }
 
     .value-container {
         flex-flow: column nowrap;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .value {
@@ -800,13 +1053,13 @@ MAIN TEAM
         flex-direction: column;
     }
 
-    .team-imgs {
+    .team-toggler-link {
         padding: 10px;
     }
 
-    .team-imgs img {
-        width: 200px;
-        height: 200px;
+    .team-toggler-link img {
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -875,6 +1128,22 @@ MAIN NEWS
 .icon-text p {
     padding-bottom: 0;
     padding-left: 20px;
+}
+
+@media (max-width: 1216.9px) and (min-width: 768px) {
+    
+    .news-slider {
+        display: flex;
+        overflow: scroll hidden;
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+
+    .news-slider {
+        display: flex;
+        overflow: scroll hidden;
+    }
 }
 
 /*
