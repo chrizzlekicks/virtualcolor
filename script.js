@@ -4,6 +4,8 @@ var overlay = document.querySelector(".header-container");
 var mobileNavBar = document.querySelector(".menu-container-overlay");
 var newsSlider = document.querySelector(".news-slider");
 var teamSection = document.querySelector(".team-members");
+
+// Databases
 var newsDB = [
     {
         img: "./Img/Blue in Sky 120-V494-3_thumb_closeup.png",
@@ -47,7 +49,7 @@ var teamDB = [
         img: "./Img/Jens.png",
         title: "Head of Digital Business Solutions",
         name: "Jens Wegner",
-        desc: ""
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
     },
     {
         img: "./Img/Flowrina.png",
@@ -94,7 +96,9 @@ function displayNewsItems(newsArticles){
             </div>
         </div>`
     ).join("");
-    newsSlider.innerHTML = displayNews;
+    if(newsSlider){
+        newsSlider.innerHTML = displayNews
+    };
 };
 
 function displayTeamMembers(teamMembers){
@@ -110,5 +114,7 @@ function displayTeamMembers(teamMembers){
             </div>
         </li>`
     ).join("");
-    teamSection.innerHTML = displayTeam;
+    if(teamSection){
+        teamSection.innerHTML = displayTeam
+    };
 };
