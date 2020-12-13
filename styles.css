@@ -888,7 +888,7 @@ FOOTER
     display: flex;
     justify-content: center;
     background-color: #7c7c7c;
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 .socialmedia * {
@@ -908,8 +908,6 @@ FOOTER
 .socialmenu {
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-    
 }
 
 .socialmenu-header {
