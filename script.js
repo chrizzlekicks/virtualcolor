@@ -125,12 +125,15 @@ function overlayToggler(){
 
 function stickyNavBar(){
     var sticky = navBar.offsetTop;
+    var logo = document.querySelector(".logo-container");
     if(window.scrollY > sticky){
         navBar.classList.add("sticky-header");
         navContent.classList.add("sticky-menu");
+        logo.style.marginLeft = "0";
     } else{
         navBar.classList.remove("sticky-header");
         navContent.classList.remove("sticky-menu");
+        logo.style.marginLeft = "20px";
     }
 }
 

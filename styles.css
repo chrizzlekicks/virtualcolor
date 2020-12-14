@@ -245,6 +245,7 @@ HEADER
     height: 100%;
     margin-left: 20px;
     background-color: #004a96;
+    transition: ease-in-out 0.25s;
 }
 
 .logo {
@@ -263,7 +264,6 @@ HEADER
     top: 0;
     position: fixed;
     height: 60px;
-    opacity: 1;
 }
 
 .sticky-menu {
