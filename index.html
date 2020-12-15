@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="VIRTUALCOLOR_Style.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>The Digital Twin of Color</title>
 </head>
 <body>
     <header class="header-container">
         <div class="menu-container">
             <div class="menu-content">
                 <nav class="top-nav">
+                    <div class="nav-toggle">
+                        <button class="hamburger-btn" type="button">
+                            <img src="./Img/BASF Icon - menue.png" alt="Hamburger-Menu" id="hamburger">
+                        </button>
+                    </div>
                     <ul class="basf-menu">
-                        <li><a href="AUROOM.html">AUROOM</a></li>
-                        <li><a href="#Virtual Color">Virtual Color</a></li>
-                        <li><a href="News.html">News</a></li>
-                        <li><a href="Team.html">Team</a></li>
+                        <li><a href="auroom.html">AUROOM</a></li>
+                        <li><a href="virtualcolor.html">Virtual Color</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="team.html">Team</a></li>
                     </ul>
                     <ul class="menu-action">
                         <li><a href="#Login">Login</a></li>
@@ -25,42 +31,115 @@
                     </ul>
                 </nav>
                 <div class="logo-container">
-                    <a href="./index.html"><div class="logo"></div></a>
+                    <a href="index.html"><div class="logo"></div></a>
                 </div>
+            </div>
+        </div>
+        <div class="menu-container-overlay">
+            <div class="menu-content-overlay">
+                <ul class="basf-menu-mobile">
+                    <li class="menu-link"><a href="auroom.html">AUROOM</a></li>
+                    <li class="menu-link"><a href="virtualcolor.html">Virtual Color</a></li>
+                    <li class="menu-link"><a href="news.html">News</a></li>
+                    <li class="menu-link"><a href="team.html">Team</a></li>
+                </ul>
             </div>
         </div>
     </header>
 
-<main>
+<main class="responsive-grid">
 
-<section class="hero-image">
-        <div class="hero-text">
+<section class="imgs index-hero">
+        <div class="hero-items">
             <h1>Always see color in the right way</h1>
-            <p>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <button>Get started</button>
+            <p>As experts for color we use our knowhow to provide color solutions for our.</p>
+            <button class="contact-btn">Get started</button>
         </div>
     </div>
 </section>
 
-    <section class="features-img-right">   
+<section class="containers-img-left"> 
+    <div class="imgs experience-img"></div>
+    <div class="experience-text">
+        <h2>Experience a new way of collaboration</h2>
+        <p>The can be tedious. With Auroom you are always aware of your products status. </p>
+        <button>Learn more</button>
+    </div>
+
+</section>
+
+    <section class="containers-img-right">   
         <div class="discover-text">
-            <h1>Discover the standard of digital colors</h1>
-            <p>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud t. </p>
+            <h2>Discover the standard of digital colors</h2>
+            <p>Our optimized file format offers a one stop solution for communicating, presenting and colors and color effects. </p>
             <button>Learn more</button>
         </div>
         <div class="imgs discover-img"></div>
     </section>
+    
+    <div class="news-container">
+        <span class="slider-arrow"><img src="./Img/arrow_forward_thin-1.jpg" alt="arrow-backward"></span>
+        <div class="news-slider"></div>
+        <span class="slider-arrow"><img src="./Img/arrow_forward_thin.jpg" alt="arrow-forward"></span>
+    </div>
 
-    <section class="features-img-left"> 
-        <div class="imgs experience-img"></div>
-        <div class="experience-text">
-            <h1>Experience a new way of collaboration</h1>
-            <p>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud t. </p>
-            <button>Learn more</button>
-        </div>
-
-    </section>
 </main>
+
+<div class="footer-wrapper">
+    <div class="footer-container">
+    <div class="socialmedia">
+        <div class="socialmenu">
+            <div class="socialmenu-header"><h2 class="footer-h2">Folgen Sie uns</h2></div>
+            <div class="socialmenu-icons">
+                <ul>
+                    <li class="social-items"><a href="#"><i class="fa fa-facebook fa-3x"></i></a></li>
+                    <li class="social-items"><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+                    <li class="social-items"><a href="#"><i class="fa fa-instagram fa-3x"></i></a></li>
+                    <li class="social-items"><a href="#"><i class="fa fa-flickr fa-3x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav">
+        	<div class="footer-heading footer-1">
+                <h2>Challenges</h2>
+                <a href="#">Urban living</a>
+                <a href="#">Food</a>
+                <a href="#">Smart Energy</a>
+                <a href="#">Featured Topic</a>  
+            </div>
+
+            <div class="footer-heading footer-2">
+                <h2>Solutions</h2>
+                <a href="#">Urban living</a>
+                <a href="#">Food</a>
+                <a href="#">Smart Energy</a>
+                <a href="#">Featured Topic</a>  
+            </div>
+
+            <div class="footer-heading footer-3">
+                <h2>About us</h2>
+                <a href="#">Urban living</a>
+                <a href="#">Food</a>
+                <a href="#">Smart Energy</a>
+                <a href="#">Featured Topic</a>  
+            </div>
+
+            <div class="footer-heading footer-4">
+                <h2>Contact Us</h2>
+                <a href="#">Urban living</a>
+                <a href="#">Food</a>
+                <a href="#">Smart Energy</a>
+                <a href="#">Featured Topic</a>  
+            </div>
+        </div>
+            <div class="legal">
+                <p>Copyright © BASF SE 2020</p>
+             </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 

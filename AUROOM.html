@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="AUROOM_Styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>AUROOM</title>
 </head>
 <body>
@@ -11,11 +11,16 @@
         <div class="menu-container">
             <div class="menu-content">
                 <nav class="top-nav">
+                    <div class="nav-toggle">
+                        <button class="hamburger-btn" type="button">
+                            <img src="./Img/BASF Icon - menue.png" alt="Hamburger-Menu" id="hamburger">
+                        </button>
+                    </div>
                     <ul class="basf-menu">
-                        <li><a href="AUROOM.html">AUROOM</a></li>
-                        <li><a href="#Virtual Color">Virtual Color</a></li>
-                        <li><a href="News.html">News</a></li>
-                        <li><a href="Team.html">Team</a></li>
+                        <li><a href="auroom.html">AUROOM</a></li>
+                        <li><a href="virtualcolor.html">Virtual Color</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="team.html">Team</a></li>
                     </ul>
                     <ul class="menu-action">
                         <li><a href="#Login">Login</a></li>
@@ -25,16 +30,25 @@
                     </ul>
                 </nav>
                 <div class="logo-container">
-                    <a href="./index.html"><div class="logo"></div></a>
+                    <a href="index.html"><div class="logo"></div></a>
                 </div>
             </div>
         </div>
+        <div class="menu-container-overlay">
+            <div class="menu-content-overlay">
+                <ul class="basf-menu-mobile">
+                    <li class="menu-link"><a href="auroom.html">AUROOM</a></li>
+                    <li class="menu-link"><a href="virtualcolor.html">Virtual Color</a></li>
+                    <li class="menu-link"><a href="news.html">News</a></li>
+                    <li class="menu-link"><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
-
-<main>
-        <section class="imgs hero">
+    <main class="responsive-grid">
+        <section class="imgs auroom-hero">
             <div class="hero-items">
-                <h1 class="hero-text">Welcome to AUROOM, the Go-To place for designers! And the future of Virtual Color!</h1>
+                <h1 class="auroom-hero-text">Welcome to AUROOM, the Go-To place for designers! And the future of Virtual Color!</h1>
                 <button class="contact-btn">Try it now</button>
             </div>
         </section>
@@ -96,5 +110,6 @@
         <p>Footer stuff</p>
     </footer>
     
+    <script src="script.js"></script>
    </body>
 </html>

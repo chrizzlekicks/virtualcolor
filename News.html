@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="AUROOM_Styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>News</title>
 </head>
 <body>
@@ -11,11 +11,16 @@
         <div class="menu-container">
             <div class="menu-content">
                 <nav class="top-nav">
+                    <div class="nav-toggle">
+                        <button class="hamburger-btn" type="button">
+                            <img src="./Img/BASF Icon - menue.png" alt="Hamburger-Menu" id="hamburger">
+                        </button>
+                    </div>
                     <ul class="basf-menu">
-                        <li><a href="AUROOM.html">AUROOM</a></li>
-                        <li><a href="#Virtual Color">Virtual Color</a></li>
-                        <li><a href="News.html">News</a></li>
-                        <li><a href="Team.html">Team</a></li>
+                        <li><a href="auroom.html">AUROOM</a></li>
+                        <li><a href="virtualcolor.html">Virtual Color</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="team.html">Team</a></li>
                     </ul>
                     <ul class="menu-action">
                         <li><a href="#Login">Login</a></li>
@@ -25,68 +30,33 @@
                     </ul>
                 </nav>
                 <div class="logo-container">
-                    <a href="./index.html"><div class="logo"></div></a>
+                    <a href="index.html"><div class="logo"></div></a>
                 </div>
             </div>
         </div>
+        <div class="menu-container-overlay">
+            <div class="menu-content-overlay">
+                <ul class="basf-menu-mobile">
+                    <li class="menu-link"><a href="auroom.html">AUROOM</a></li>
+                    <li class="menu-link"><a href="virtualcolor.html">Virtual Color</a></li>
+                    <li class="menu-link"><a href="news.html">News</a></li>
+                    <li class="menu-link"><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
-    <main>
+    <main class="responsive-grid">
         <div class="heading">
             <h1 class="hero-text">What's new?</h1>
         </div>
         <div class="news-container">
             <span class="slider-arrow"><img src="./Img/arrow_forward_thin-1.jpg" alt="arrow-backward"></span>
-            <div class="news-slider">
-                <div class="news">
-                    <img src="./Img/Blue in Sky 120-V494-3_thumb_closeup.png" alt="AUROOM-launch" width="325px" height="200px">
-                    <p class="date">01.02.2021</p>
-                    <h3>Launch of the new AUROOM website</h3>
-                    <p>Description</p>
-                    <hr>
-                    <div class="icon-text">
-                        <img src="./Img/Path 47.png" alt="download" width="16.5px" height="20px">
-                        <p>PDF (6.2 MB)</p>
-                    </div>
-                    <div class="icon-text">
-                        <img src="./Img/Link_circle-1.jpg" alt="learn-more" width="20px" height="20px">
-                        <p>Learn more</p> 
-                    </div>
-                </div>
-                <div class="news">
-                    <img src="./Img/P324_BASF_Automotive_Color_Trends_2020_2021.JPG" alt="color-trends" width="325px" height="200px">
-                    <p class="date">01.02.2021</p>
-                    <h3>Our designers present the newest automotive color trends</h3>
-                    <p>Description</p>
-                    <hr>
-                    <div class="icon-text">
-                        <img src="./Img/Path 47.png" alt="download" width="16.5px" height="20px">
-                        <p>PDF (6.2 MB)</p>
-                    </div>
-                    <div class="icon-text">
-                        <img src="./Img/Link_circle-1.jpg" alt="learn-more" width="20px" height="20px">
-                        <p>Learn more</p> 
-                    </div></div>
-                <div class="news">
-                    <img src="./Img/Blue in Sky 120-V494-3_thumb_medium_right.png" alt="new-auvots" width="325px" height="200px">
-                    <p class="date">01.02.2021</p>
-                    <h3>New virtual AUVOTs released</h3>
-                    <p>Description</p>
-                    <hr>
-                    <div class="icon-text">
-                        <img src="./Img/Path 47.png" alt="download" width="16.5px" height="20px">
-                        <p>PDF (6.2 MB)</p>
-                    </div>
-                    <div class="icon-text">
-                        <img src="./Img/Link_circle-1.jpg" alt="learn-more" width="20px" height="20px">
-                        <p>Learn more</p> 
-                    </div>
-                </div>
-            </div>
+            <div class="news-slider"></div>
             <span class="slider-arrow"><img src="./Img/arrow_forward_thin.jpg" alt="arrow-forward"></span>
         </div>
     </main>
-    <footer>
-        <p>Footer stuff</p>
+
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
