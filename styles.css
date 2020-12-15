@@ -553,15 +553,42 @@ MAIN INDEX
 
 .news-teaser {
     display: flex;
-    
     flex-direction: row-reverse;
     width: 325px;
     margin: 25px;
 }
   
-.logo-slider {
-    background-color: #333;
-    height: 200px;
+.grid-logo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  justify-content: center;
+}
+
+.grid-logo > div {
+    background: #F6F6F6;
+    padding: 1rem;
+    position: relative;
+}
+
+.grid-logo > div::before{
+    content:"";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.grid-logo >div >img {
+position: absolute;
+max-width: 100%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+
+.news-heading {
+    justify-content: center;
+    display: flex;
 }
 
 /*
@@ -569,7 +596,6 @@ MAIN INDEX
 VIRTUAL COLOR
 =============
 */
-
 
 .vc-hero {
     background-image: linear-gradient(to bottom, transparent, white), url(./Img/basf_surface_solutions_auroom.jpg.dynamic.1280w720h.9672c6af986fb1a2a70312537bb3981aff5ba23d.jpeg);
@@ -580,17 +606,21 @@ VIRTUAL COLOR
 }
 
 .content-vc {
-    width: 50%;
+    margin-bottom: 75px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 750px;
+    text-align: center;
 }
 
 .feature-list {
-    background-color: lime;
+    display: flex;
     flex-direction: column;
     grid-column: 3;
+    justify-content: center;
 }
 
 .feature-item {
-    background-color: linen;
     display: flex; 
 }
 
@@ -600,9 +630,7 @@ VIRTUAL COLOR
 }
 
  .feature-centered {
-    background-color: maroon;
-    display: grid;
-    grid-template-columns: 25% 20% 30% 15%;
+    display: flex;
     justify-content: center;
  }
 
@@ -611,7 +639,8 @@ VIRTUAL COLOR
     width: 45px;
     background-color: #bbb;
     border-radius: 50%;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
   }  
 
 .container-logo {
@@ -622,9 +651,52 @@ VIRTUAL COLOR
   .container-logo div {
       border: 1px #ccc solid;
       padding: 10px;
-      background-color: #bbb;
+      background-color: #F6F6F6;
       width: 400px;
   }
+
+  .child {
+    position: absolute;
+    top: 270px;
+  }
+  
+  .child-1 {
+    top: 150px;
+    left: 225px;
+  }
+  
+  .child-2 {
+    left: -70px;
+  }
+  
+  .parent {
+    position: relative;
+  }
+
+  .integrate {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 75px;
+      margin-left: 25%;
+      padding-top: 120px;
+      margin-right: 25%;
+      text-align: center;
+  }
+
+  .image-feature {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+}
+
+  @media screen and (max-width: 767.9px) {
+
+    .feature-centered {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
 
 /*
 ===========
@@ -1243,9 +1315,9 @@ FOOTER
 .legal p {
     color: #adadad;
     margin: auto;
-    }
+}
 
-    @media screen and (max-width: 767.9px) {
+@media screen and (max-width: 767.9px) {
 
         .footer-container {
             margin: auto;
@@ -1258,9 +1330,9 @@ FOOTER
 
         .footer-nav {
         flex-direction: column;
-            }
+        }
         
         .socialmenu-icons {
-            width: auto;
+        width: auto;    
         }
- }
+}
