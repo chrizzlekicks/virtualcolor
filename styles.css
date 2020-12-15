@@ -534,7 +534,6 @@ MAIN INDEX
 .index-hero {
     background-image: linear-gradient(to bottom, transparent, white), url(./Img/AUVOT_Mea_Doxxing\ Blue_Side1.jpg);
     background-size: cover;
-    padding-top: 150px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -581,6 +580,12 @@ MAIN INDEX
     margin: 25px;
 }
 
+@media screen and (max-width: 767.9px) {
+
+    .index-hero {
+       height:225px;
+    }
+}
 
 
 /*
@@ -588,6 +593,10 @@ MAIN INDEX
 VIRTUAL COLOR
 =============
 */
+
+.hero-vc {
+    padding-top: 100px;
+}
 
 .vc-hero {
     background-image: linear-gradient(to bottom, transparent, white), url(./Img/Marketing&Retail.png);
@@ -599,14 +608,13 @@ VIRTUAL COLOR
 
 .content-vc {
     margin-bottom: 75px;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-top: 750px;
+    margin-left: 30%;
+    margin-right: 30%;
     text-align: center;
 }
 
 .feature {
-    padding-top: 120px;
+    padding-top: 80px;
 }
 .feature-list {
     display: flex;
@@ -689,6 +697,15 @@ VIRTUAL COLOR
 
     .integrate {
         padding-top:80px;
+    }
+
+    .vc-hero {
+        height:400px;
+    }
+    
+    .content-vc {
+        margin-right:10%;
+        margin-left:10%
     }
 }
 
@@ -1121,9 +1138,6 @@ MAIN TEAM
         padding: 10px 10px 20px;
     }
 
-    p {
-        padding: 0;
-    }
 
     .team-container {
         padding: 25px;
