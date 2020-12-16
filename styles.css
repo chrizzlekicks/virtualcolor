@@ -577,6 +577,12 @@ MAIN INDEX
      width: 325px;
      margin: 25px;
  }
+
+ .news-heading {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
  
  @media screen and (max-width: 767.9px) {
  
@@ -687,6 +693,10 @@ VIRTUAL COLOR
 .grid-logo {
     display: flex;
     justify-content: center;
+}
+
+.logos {
+    padding: 0 10px;
 }
 
 @media screen and (max-width: 767.9px) {
