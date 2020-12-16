@@ -587,10 +587,10 @@ MAIN INDEX
 }
   
 .grid-logo {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 1rem;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
 }
 
 .grid-logo > div {
@@ -605,14 +605,13 @@ MAIN INDEX
     padding-bottom: 100%;
 }
 
-.grid-logo >div >img {
-position: absolute;
-max-width: 100%;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+.grid-logo > div >img {
+    position: absolute;
+    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 
 .news-heading {
     justify-content: center;
@@ -805,9 +804,7 @@ MAIN AUROOM
 .benefit-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    padding: 50px 0;
+    align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
     background-color: #333333;
@@ -817,7 +814,9 @@ MAIN AUROOM
 .benefits {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    max-width: 1244px;
+    margin-right: auto;
+    margin-left: auto;
     margin: 0 75px;
 }
 
@@ -827,7 +826,7 @@ MAIN AUROOM
     flex: 30%;
     align-items: center;
     text-align: center;
-    padding: 50px;
+    padding: 2rem;
 }
 
 .icon-benefit {
@@ -1042,8 +1041,9 @@ MAIN TEAM
 .value-container {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 10.76%;
-    margin-right: 10.76%;
+    max-width: 1244px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .value {
@@ -1058,7 +1058,6 @@ MAIN TEAM
 }
 
 .team-container {
-    padding: 50px;
     width: auto;
     height: auto;
 }
@@ -1068,38 +1067,51 @@ MAIN TEAM
 }
 
 .team-members {
-    columns: 3;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    position: relative;
+    max-width: 1244px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.has-open {
+    opacity: 0.3;
+}
+
+.info--active {
+    opacity: 1;
+}
+
+.team-toggler-link {
+    padding: 1rem;
 }
 
 .team-toggler-link img {
-    padding: 1.5rem;
     transition: ease-out 0.5s;
+    width: 250px;
+    height: 250px;
+    display: block;
 }
 
 .team-toggler-link img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
 .team-toggler-details {
     display: none;
     overflow: hidden;
-    opacity: 0;
 }
 
 .is-open {
-    display: flex;
-    flex-direction: column;
-    width: auto;
+    display: block;
     overflow: visible;
-    opacity: 1;
     position: absolute;
-    padding: 0.5rem;
-    margin: 0.5rem 0 1rem 0;
+    width: 100%;
+    left: 0;
+    padding: 1rem 0.5rem;
 }
 
 .team-member-title {
@@ -1127,6 +1139,11 @@ MAIN TEAM
 
     .team-container h1 {
         margin-bottom: 20px;
+    }
+
+    .team-toggler-link img {
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -1167,17 +1184,9 @@ MAIN TEAM
         margin-bottom: 20px;
     }
 
-    .team-members {
-        flex-direction: column;
-    }
-
-    .team-toggler-link {
-        padding: 10px;
-    }
-
     .team-toggler-link img {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -1305,8 +1314,8 @@ FOOTER
 }
 
 .socialmenu-icons a {
-        color: #adadad;
-        padding: 0 50px 0 0;
+    color: #adadad;
+    padding: 0 50px 0 0;
 }
 
 .socialmenu-icons li{

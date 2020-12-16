@@ -70,36 +70,42 @@ var valueDB = [
 ]
 var teamDB = [
     {
+        id: "mark-gutjahr",
         img: "./Img/Mark.png",
         title: "Head of Design",
         name: "Mark Gutjahr",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
     },
     {
+        id: "michaela-finkenzeller",
         img: "./Img/Michaela.png",
         title: "Designer",
         name: "Michaela Finkenzeller",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
     },
     {
+        id: "benjamin-lanfer",
         img: "./Img/Benji.png",
         title: "Color Scientist",
         name: "Benjamin Lanfer",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
     },
     {
+        id: "jens-wegner",
         img: "./Img/Jens.png",
         title: "Head of Digital Business Solutions",
         name: "Jens Wegner",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
     },
     {
+        id: "florina-trost",
         img: "./Img/Flowrina.png",
         title: "Designer",
         name: "Florina Trost",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
     },
     {
+        id: "chris-schimetschka",
         img: "./Img/Chrizzle.png",
         title: "Product Manager",
         name: "Christian Schimetschka",
@@ -108,16 +114,90 @@ var teamDB = [
 ];
 
 // Event Listeners
-navToggle.addEventListener("click", overlayToggler);
-window.addEventListener("scroll", stickyNavBar);
 window.addEventListener("DOMContentLoaded", function(){
     displayNewsItems(newsDB);
     displayBenefits(benefitDB);
     displayValueProps(valueDB);
     displayTeamMembers(teamDB);
 });
+window.addEventListener("scroll", stickyNavBar);
+navToggle.addEventListener("click", overlayToggler);
 
 // Functions
+
+function displayTeamMembers(teamMembers){
+    var displayTeam = teamMembers.map(member =>
+        `<li class="team-toggler" data-toggle-element="${member.id}">
+        <div class="team-toggler-link">
+            <img src="${member.img}" alt="${member.name}">
+            </div>
+            <div class="team-toggler-details">
+            <h4 class="team-member-title">${member.title}</h4>
+            <h3 class="team-member-name">${member.name}</h3>
+            <p class="team-member-description">${member.desc}</p>
+        </div>
+        </li>`
+        ).join("");
+        if(teamSection){
+            teamSection.innerHTML = displayTeam;
+            var teamImgs = teamSection.querySelectorAll(".team-toggler-link");
+        teamImgs.forEach(teamImg =>
+            teamImg.addEventListener("click", teamToggler));
+        };
+};
+
+function displayNewsItems(newsArticles){
+    var displayNews = newsArticles.map(article =>
+        `<div class="news">
+            <img src="${article.img}" alt="${article.title}" width="325px" height="200px">
+            <p class="date">${article.date}</p>
+            <h3>${article.title}</h3>
+            <p>${article.desc}</p>
+            <hr>
+            <div class="icon-text">
+                <img src="./Img/Path 47.png" alt="download" width="16.5px" height="20px">
+                <p>PDF (6.2 MB)</p>
+                </div>
+            <div class="icon-text">
+                <img src="./Img/Link_circle-1.jpg" alt="learn-more" width="20px" height="20px">
+                <p>Learn more</p> 
+            </div>
+        </div>`
+        ).join("");
+    if(newsSlider){
+        newsSlider.innerHTML = displayNews;
+    };
+};
+
+function displayBenefits(benefits){
+    var displayBenefit = benefits.map(benefit =>
+        `<article class="benefit">
+        <img src="${benefit.img}" class="icon-benefit" alt="${benefit.title}">
+            <h4>${benefit.title}</h4>
+            <p>${benefit.desc}</p>
+            </article>`
+    ).join("");
+    if(benefitSection){
+        benefitSection.innerHTML = displayBenefit;
+    };
+};
+
+function displayValueProps(values){
+    var displayValue = values.map(value =>
+        `<article class="value">
+            <div class="value-number">
+            <h1>${value.id}</h1>
+            </div>
+            <div class="value-text">
+            <p>${value.desc}</p>
+            </div>
+        </article>`
+        ).join("");
+    if(valueSection){
+        valueSection.innerHTML = displayValue;
+    };
+};
+
 function overlayToggler(){
     navBar.classList.toggle("overlay");
     mobileNavBar.classList.toggle("menu-container-overlay--active");
@@ -133,76 +213,17 @@ function stickyNavBar(){
     } else{
         navBar.classList.remove("sticky-header");
         navContent.classList.remove("sticky-menu");
-        logo.style.marginLeft = "20px";
-    }
-}
-
-function displayNewsItems(newsArticles){
-    var displayNews = newsArticles.map(article =>
-        `<div class="news">
-            <img src="${article.img}" alt="${article.title}" width="325px" height="200px">
-            <p class="date">${article.date}</p>
-            <h3>${article.title}</h3>
-            <p>${article.desc}</p>
-            <hr>
-            <div class="icon-text">
-                <img src="./Img/Path 47.png" alt="download" width="16.5px" height="20px">
-                <p>PDF (6.2 MB)</p>
-            </div>
-            <div class="icon-text">
-                <img src="./Img/Link_circle-1.jpg" alt="learn-more" width="20px" height="20px">
-                <p>Learn more</p> 
-            </div>
-        </div>`
-    ).join("");
-    if(newsSlider){
-        newsSlider.innerHTML = displayNews;
+        logo.style = "none";
     };
 };
 
-function displayBenefits(benefits){
-    var displayBenefit = benefits.map(benefit =>
-        `<article class="benefit">
-            <img src="${benefit.img}" class="icon-benefit" alt="${benefit.title}">
-            <h4>${benefit.title}</h4>
-            <p>${benefit.desc}</p>
-        </article>`
-    ).join("");
-    if(benefitSection){
-        benefitSection.innerHTML = displayBenefit;
-    };
-};
-
-function displayValueProps(values){
-    var displayValue = values.map(value =>
-        `<article class="value">
-            <div class="value-number">
-                <h1>${value.id}</h1>
-            </div>
-            <div class="value-text">
-                <p>${value.desc}</p>
-            </div>
-        </article>`
-    ).join("");
-    if(valueSection){
-        valueSection.innerHTML = displayValue;
+function teamToggler(event){
+    var listItem = event.currentTarget.parentElement;
+    // teamSection.classList.toggle("has-open");
+    listItem.lastElementChild.classList.toggle("is-open");
+    if(listItem.lastElementChild.classList.contains("is-open")){
+        listItem.style.marginBottom = "264px";
+    } else {
+        listItem.style = "";
     }
-}
-
-function displayTeamMembers(teamMembers){
-    var displayTeam = teamMembers.map(member =>
-        `<li class="team-toggler">
-            <div class="team-toggler-link">
-                <img src="${member.img}" alt="${member.name}" aria-expanded="false">
-            </div>
-            <div aria-label="${member.name}" class="team-toggler-details" role="region" hidden="true">
-                <div class="team-member-title">${member.title}</div>
-                    <h3 class="team-member-name">${member.name}</h3>
-                <div class="team-member-description">${member.desc}</div>
-            </div>
-        </li>`
-    ).join("");
-    if(teamSection){
-        teamSection.innerHTML = displayTeam;
-    };
 };
