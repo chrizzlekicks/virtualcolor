@@ -138,12 +138,12 @@ function displayTeamMembers(teamMembers){
         </div>
         </li>`
         ).join("");
-        if(teamSection){
-            teamSection.innerHTML = displayTeam;
-            var teamImgs = teamSection.querySelectorAll(".team-toggler-link");
+    if(teamSection){
+        teamSection.innerHTML = displayTeam;
+        var teamImgs = teamSection.querySelectorAll(".team-toggler-link");
         teamImgs.forEach(teamImg =>
             teamImg.addEventListener("click", teamToggler));
-        };
+    };
 };
 
 function displayNewsItems(newsArticles){
@@ -222,7 +222,7 @@ function teamToggler(event){
     // teamSection.classList.toggle("has-open");
     listItem.lastElementChild.classList.toggle("is-open");
     if(listItem.lastElementChild.classList.contains("is-open")){
-        listItem.style.marginBottom = "264px";
+        listItem.style.marginBottom = "212px";
     } else {
         listItem.style = "";
     }

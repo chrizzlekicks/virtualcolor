@@ -510,8 +510,6 @@ MAIN GLOBAL
 }
 
 .hero-text {
-    margin-left: 25%;
-    margin-right: 25%;
     text-align: center;
 }
 
@@ -678,47 +676,47 @@ VIRTUAL COLOR
     justify-content: space-between;
 }
 
-  .container-logo div {
-      border: 1px #ccc solid;
-      padding: 10px;
-      background-color: #F6F6F6;
-      width: 400px;
+.container-logo div {
+    border: 1px #ccc solid;
+    padding: 10px;
+    background-color: #F6F6F6;
+    width: 400px;
   }
 
-  .child {
+.child {
     position: absolute;
     top: 270px;
-  }
+}
   
-  .child-1 {
+.child-1 {
     top: 150px;
     left: 225px;
-  }
+}
   
-  .child-2 {
+.child-2 {
     left: -70px;
-  }
+}
   
-  .parent {
+.parent {
     position: relative;
-  }
+}
 
-  .integrate {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-bottom: 75px;
-      padding-top: 120px;
-      text-align: center;
-  }
+.integrate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 75px;
+    padding-top: 120px;
+    text-align: center;
+}
 
-  .image-feature {
+.image-feature {
     max-width: 100%;
     height: auto;
     margin-right: 20px;
 }
 
-  @media screen and (max-width: 767.9px) {
+@media screen and (max-width: 767.9px) {
 
     .feature-centered {
         display: flex;
@@ -806,10 +804,8 @@ MAIN AUROOM
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    background-color: #333333;
-    color: white
+    background: linear-gradient(#fff, #bcbcbc, #fff);
+    color: black;
 }
 
 .benefits {
@@ -826,13 +822,19 @@ MAIN AUROOM
     flex-direction: column;
     flex: 30%;
     align-items: center;
+    justify-content: space-around;
     text-align: center;
     padding: 2rem;
 }
 
+.benefit h4 {
+    padding: 0.5rem;
+}
+
 .icon-benefit {
-    height: 100px;
-    width: 100px;
+    height: 116px;
+    width: 116px;
+    padding: 1rem;
 }
 
 @media (max-width: 1216.9px) and (min-width: 768px) {
@@ -1097,7 +1099,7 @@ MAIN TEAM
 }
 
 .team-toggler-link img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
