@@ -624,9 +624,13 @@ VIRTUAL COLOR
 =============
 */
 
+.hero-vc {
+    padding-top: 100px;
+}
+
 .vc-hero {
-    background-image: linear-gradient(to bottom, transparent, white), url(./Img/basf_surface_solutions_auroom.jpg.dynamic.1280w720h.9672c6af986fb1a2a70312537bb3981aff5ba23d.jpeg);
-    background-size: cover;
+    background-image: linear-gradient(to bottom, transparent, white), url(./Img/Marketing&Retail.png);
+    background-size: contain;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -636,7 +640,6 @@ VIRTUAL COLOR
     margin-bottom: 75px;
     margin-left: 25%;
     margin-right: 25%;
-    padding-top: 750px;
     text-align: center;
 }
 
@@ -705,9 +708,7 @@ VIRTUAL COLOR
       flex-direction: column;
       justify-content: center;
       margin-bottom: 75px;
-      margin-left: 25%;
       padding-top: 120px;
-      margin-right: 25%;
       text-align: center;
   }
 
