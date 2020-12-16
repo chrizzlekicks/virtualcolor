@@ -526,25 +526,19 @@ MAIN INDEX
 ==========
 */
 
-.hero-items {
-    flex-direction: column;
+.hero-items-index {
+   text-align: center;
+   padding: 10px;
 }
 
 .index-hero {
     background-image: linear-gradient(to bottom, transparent, white), url(./Img/AUVOT_Mea_Doxxing\ Blue_Side1.jpg);
     background-size: cover;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
   
-.lp-hero-text {
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-top: 750px;
-    text-align: center;
-}
 
 .features-img-right {
     display: grid;
@@ -585,6 +579,7 @@ MAIN INDEX
     width: 325px;
     margin: 25px;
 }
+<<<<<<< HEAD
   
 .grid-logo {
     display: grid;
@@ -592,19 +587,12 @@ MAIN INDEX
     grid-gap: 1rem;
     justify-content: center;
 }
+=======
+>>>>>>> 1881d2a428bea75852feb7660ddb87dd83b196a7
 
-.grid-logo > div {
-    background: #F6F6F6;
-    padding: 1rem;
-    position: relative;
-}
+@media screen and (max-width: 767.9px) {
 
-.grid-logo > div::before{
-    content:"";
-    display: block;
-    padding-bottom: 100%;
-}
-
+<<<<<<< HEAD
 .grid-logo > div >img {
     position: absolute;
     max-width: 100%;
@@ -617,6 +605,13 @@ MAIN INDEX
     justify-content: center;
     display: flex;
 }
+=======
+    .index-hero {
+       height:225px;
+    }
+}
+
+>>>>>>> 1881d2a428bea75852feb7660ddb87dd83b196a7
 
 /*
 =============
@@ -624,9 +619,13 @@ VIRTUAL COLOR
 =============
 */
 
+.hero-vc {
+    padding-top: 100px;
+}
+
 .vc-hero {
-    background-image: linear-gradient(to bottom, transparent, white), url(./Img/basf_surface_solutions_auroom.jpg.dynamic.1280w720h.9672c6af986fb1a2a70312537bb3981aff5ba23d.jpeg);
-    background-size: cover;
+    background-image: linear-gradient(to bottom, transparent, white), url(./Img/Marketing&Retail.png);
+    background-size:contain;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -634,94 +633,104 @@ VIRTUAL COLOR
 
 .content-vc {
     margin-bottom: 75px;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-top: 750px;
+    margin-left: 30%;
+    margin-right: 30%;
     text-align: center;
 }
 
+.feature {
+    padding-top: 80px;
+}
 .feature-list {
     display: flex;
     flex-direction: column;
-    grid-column: 3;
     justify-content: center;
 }
 
 .feature-item {
     display: flex; 
+    padding: 20px 0px;
 }
 
-.feature-text p {
+.feature-item p {
     display: flex;
-    align-self: center;
+    padding-bottom: 0;
+    margin: auto;
+    margin-left: 0;
 }
 
- .feature-centered {
+.feature-centered {
     display: flex;
     justify-content: center;
  }
 
-.dot {
-    height: 45px;
-    width: 45px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-  }  
-
-.container-logo {
-    display: flex;
-    justify-content: space-between;
+.feature-icon {
+    margin-right: 10px;
+    padding-left: 0px;
 }
 
-  .container-logo div {
-      border: 1px #ccc solid;
-      padding: 10px;
-      background-color: #F6F6F6;
-      width: 400px;
-  }
+.logos {
+    padding:0 10px;
+}
 
-  .child {
-    position: absolute;
-    top: 270px;
-  }
-  
-  .child-1 {
-    top: 150px;
-    left: 225px;
-  }
-  
-  .child-2 {
-    left: -70px;
-  }
-  
-  .parent {
-    position: relative;
-  }
-
-  .integrate {
+.integrate {
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin-bottom: 75px;
-      margin-left: 25%;
+      
       padding-top: 120px;
-      margin-right: 25%;
+      
       text-align: center;
   }
 
-  .image-feature {
+.image-feature {
     max-width: 100%;
     height: auto;
-    margin-right: 20px;
+    margin-right: 10%;
+    margin-left: 20px;
 }
 
-  @media screen and (max-width: 767.9px) {
+.grid-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.news-heading {
+    justify-content: center;
+    display: flex;
+}
+
+@media screen and (max-width: 767.9px) {
 
     .feature-centered {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .feature-item {
+        padding: 0;
+    }
+
+    .feature-list {
+        padding:10px;
+    }
+
+    .grid-logo {
+        flex-direction: column;
+    }
+
+    .integrate {
+        padding-top:80px;
+    }
+
+    .vc-hero {
+        height:400px;
+    }
+    
+    .content-vc {
+        margin-right:10%;
+        margin-left:10%
     }
 }
 
@@ -1172,9 +1181,6 @@ MAIN TEAM
         padding: 10px 10px 20px;
     }
 
-    p {
-        padding: 0;
-    }
 
     .team-container {
         padding: 25px;
