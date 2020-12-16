@@ -579,6 +579,7 @@ MAIN INDEX
     width: 325px;
     margin: 25px;
 }
+<<<<<<< HEAD
   
 .grid-logo {
     display: grid;
@@ -601,6 +602,16 @@ MAIN INDEX
     justify-content: center;
     display: flex;
 }
+=======
+
+@media screen and (max-width: 767.9px) {
+
+    .index-hero {
+       height:225px;
+    }
+}
+
+>>>>>>> 1881d2a428bea75852feb7660ddb87dd83b196a7
 
 /*
 =============
