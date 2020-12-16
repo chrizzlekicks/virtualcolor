@@ -526,97 +526,67 @@ MAIN INDEX
 ==========
 */
 
-.hero-items {
-    flex-direction: column;
-}
-
-.index-hero {
-    background-image: linear-gradient(to bottom, transparent, white), url(./Img/AUVOT_Mea_Doxxing\ Blue_Side1.jpg);
-    background-size: cover;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-  
-.lp-hero-text {
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-top: 750px;
+.hero-items-index {
     text-align: center;
-}
-
-.features-img-right {
-    display: grid;
-    grid-template-columns: 15% 20% 15% 50%;
-    grid-template-rows: auto;
-}
+    padding: 10px;
+ }
+ 
+ .index-hero {
+     background-image: linear-gradient(to bottom, transparent, white), url(./Img/AUVOT_Mea_Doxxing\ Blue_Side1.jpg);
+     background-size: cover;
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+ }
+   
+ 
+ .features-img-right {
+     display: grid;
+     grid-template-columns: 15% 20% 15% 50%;
+     grid-template-rows: auto;
+ }
+   
+ .discover-text {
+     grid-column: 2;
+     align-self: center;
+ }
+   
+ .discover-img {
+     background-image: url(./Img/Domes.png);
+     grid-column: 4;
+ }
+   
+ .features-img-left {
+     display: grid;
+     grid-template-columns: 50% 15% 20% 15%;
+     grid-template-rows: auto;
+ }
+   
+ .experience-img {
+     background-image: url(./Img/275790_basfauroom_122475.jpg);
+     grid-column: 1;
+ }
+   
+ .experience-text {
+     grid-column: 3;
+     align-self: center;
+     text-align: right;
+ }
+ 
+ .news-teaser {
+     display: flex;
+     flex-direction: row-reverse;
+     width: 325px;
+     margin: 25px;
+ }
+ 
+ @media screen and (max-width: 767.9px) {
+ 
+     .index-hero {
+        height:225px;
+     }
+ }
   
-.discover-text {
-    grid-column: 2;
-    align-self: center;
-}
-  
-.discover-img {
-    background-image: url(./Img/Domes.png);
-    grid-column: 4;
-}
-  
-.features-img-left {
-    display: grid;
-    grid-template-columns: 50% 15% 20% 15%;
-    grid-template-rows: auto;
-}
-  
-.experience-img {
-    background-image: url(./Img/275790_basfauroom_122475.jpg);
-    grid-column: 1;
-}
-  
-.experience-text {
-    grid-column: 3;
-    align-self: center;
-    text-align: right;
-}
-
-.news-teaser {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 325px;
-    margin: 25px;
-}
-  
-.grid-logo {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1rem;
-    justify-content: center;
-}
-
-.grid-logo > div {
-    background: #F6F6F6;
-    padding: 1rem;
-    position: relative;
-}
-
-.grid-logo > div::before{
-    content:"";
-    display: block;
-    padding-bottom: 100%;
-}
-
-.grid-logo > div >img {
-    position: absolute;
-    max-width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.news-heading {
-    justify-content: center;
-    display: flex;
-}
 
 /*
 =============
@@ -630,7 +600,7 @@ VIRTUAL COLOR
 
 .vc-hero {
     background-image: linear-gradient(to bottom, transparent, white), url(./Img/Marketing&Retail.png);
-    background-size: contain;
+    background-size:contain;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -638,93 +608,107 @@ VIRTUAL COLOR
 
 .content-vc {
     margin-bottom: 75px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 30%;
+    margin-right: 30%;
     text-align: center;
+}
+
+.feature {
+    padding-top: 80px;
 }
 
 .feature-list {
     display: flex;
     flex-direction: column;
-    grid-column: 3;
     justify-content: center;
 }
 
 .feature-item {
     display: flex; 
+    padding: 20px 0px;
 }
 
-.feature-text p {
+.feature-item p {
     display: flex;
-    align-self: center;
+    padding-bottom: 0;
+    margin: auto;
+    margin-left: 0;
 }
 
- .feature-centered {
+.feature-centered {
     display: flex;
     justify-content: center;
  }
 
-.dot {
-    height: 45px;
-    width: 45px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-  }  
-
-.container-logo {
-    display: flex;
-    justify-content: space-between;
+.feature-icon {
+    margin-right: 10px;
+    padding-left: 0px;
 }
 
-  .container-logo div {
-      border: 1px #ccc solid;
-      padding: 10px;
-      background-color: #F6F6F6;
-      width: 400px;
-  }
+.logos {
+    padding:0 10px;
+}
 
-  .child {
-    position: absolute;
-    top: 270px;
-  }
-  
-  .child-1 {
-    top: 150px;
-    left: 225px;
-  }
-  
-  .child-2 {
-    left: -70px;
-  }
-  
-  .parent {
-    position: relative;
-  }
-
-  .integrate {
+.integrate {
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin-bottom: 75px;
       padding-top: 120px;
       text-align: center;
-  }
-
-  .image-feature {
-    max-width: 100%;
-    height: auto;
-    margin-right: 20px;
 }
 
-  @media screen and (max-width: 767.9px) {
+.image-feature {
+    max-width: 100%;
+    height: auto;
+    margin-right: 10%;
+    margin-left: 20px;
+}
+
+.grid-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.news-heading {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+@media screen and (max-width: 767.9px) {
 
     .feature-centered {
         display: flex;
         flex-wrap: wrap;
     }
+
+    .feature-item {
+        padding: 0;
+    }
+
+    .feature-list {
+        padding:10px;
+    }
+
+    .grid-logo {
+        flex-direction: column;
+    }
+
+    .integrate {
+        padding-top:80px;
+    }
+
+    .vc-hero {
+        height:400px;
+    }
+    
+    .content-vc {
+        margin-right:10%;
+        margin-left:10%
+    }
 }
+
 
 /*
 ===========
