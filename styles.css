@@ -1072,6 +1072,7 @@ MAIN TEAM
 .team-container {
     width: auto;
     height: auto;
+    padding: 25px;
 }
 
 .team-container h1 {
@@ -1086,10 +1087,6 @@ MAIN TEAM
     max-width: 1244px;
     margin-right: auto;
     margin-left: auto;
-}
-
-.has-open {
-    opacity: 0.3;
 }
 
 .info--active {
@@ -1123,7 +1120,7 @@ MAIN TEAM
     position: absolute;
     width: 100%;
     left: 0;
-    padding: 1rem 0.5rem;
+    padding-top: 1rem;
 }
 
 .team-member-title {
@@ -1189,7 +1186,7 @@ MAIN TEAM
     }
 
     .team-container {
-        padding: 25px;
+        padding: 20px;
     }
 
     .team-container h1 {

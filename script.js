@@ -128,23 +128,39 @@ navToggle.addEventListener("click", overlayToggler);
 function displayTeamMembers(teamMembers){
     var displayTeam = teamMembers.map(member =>
         `<li class="team-toggler" data-toggle-element="${member.id}">
-        <div class="team-toggler-link">
-            <img src="${member.img}" alt="${member.name}">
+            <div class="team-toggler-link">
+                <img src="${member.img}" alt="${member.name}">
             </div>
             <div class="team-toggler-details">
-            <h4 class="team-member-title">${member.title}</h4>
-            <h3 class="team-member-name">${member.name}</h3>
-            <p class="team-member-description">${member.desc}</p>
-        </div>
+                <h4 class="team-member-title">${member.title}</h4>
+                <h3 class="team-member-name">${member.name}</h3>
+                <p class="team-member-description">${member.desc}</p>
+            </div>
         </li>`
         ).join("");
     if(teamSection){
         teamSection.innerHTML = displayTeam;
-        var teamImgs = teamSection.querySelectorAll(".team-toggler-link");
-        teamImgs.forEach(teamImg =>
-            teamImg.addEventListener("click", teamToggler));
-    };
-};
+        var teamMembers = teamSection.querySelectorAll(".team-toggler");
+        teamMembers.forEach((teamMember) => {
+            var memberImg = teamMember.querySelector(".team-toggler-link");
+            var memberDetail = teamMember.querySelector(".team-toggler-details");
+            memberImg.addEventListener("click", function(){
+                teamMembers.forEach((crewMember) => {
+                    var memberInfo = crewMember.querySelector(".team-toggler-details");
+                    if (memberInfo !== memberDetail) {
+                            memberInfo.classList.remove("is-open");
+                            crewMember.style = "";
+                        }
+                });
+                memberDetail.classList.toggle("is-open");
+                if (memberDetail.classList.contains("is-open")) {
+                    teamMember.style.marginBottom = "212px";
+                } else {
+                    teamMember.style = "";
+            }
+        })
+    })
+}};
 
 function displayNewsItems(newsArticles){
     var displayNews = newsArticles.map(article =>
@@ -166,8 +182,7 @@ function displayNewsItems(newsArticles){
         ).join("");
     if(newsSlider){
         newsSlider.innerHTML = displayNews;
-    };
-};
+}};
 
 function displayBenefits(benefits){
     var displayBenefit = benefits.map(benefit =>
@@ -217,13 +232,13 @@ function stickyNavBar(){
     };
 };
 
-function teamToggler(event){
-    var listItem = event.currentTarget.parentElement;
-    // teamSection.classList.toggle("has-open");
-    listItem.lastElementChild.classList.toggle("is-open");
-    if(listItem.lastElementChild.classList.contains("is-open")){
-        listItem.style.marginBottom = "212px";
-    } else {
-        listItem.style = "";
-    }
-};
+// function teamToggler(event){
+//     var listItem = event.currentTarget.parentElement;
+//     // teamSection.classList.toggle("has-open");
+//     listItem.lastElementChild.classList.toggle("is-open");
+//     if(listItem.lastElementChild.classList.contains("is-open")){
+//         listItem.style.marginBottom = "212px";
+//     } else {
+//         listItem.style = "";
+//     }
+// };
