@@ -113,17 +113,19 @@ var teamDB = [
     },
 ];
 
-// Event Listeners
-window.addEventListener("DOMContentLoaded", function(){
-    displayNewsItems(newsDB);
-    displayBenefits(benefitDB);
-    displayValueProps(valueDB);
-    displayTeamMembers(teamDB);
-});
+// Global Event Listeners
+window.addEventListener("DOMContentLoaded", loadContentDynamically);
 window.addEventListener("scroll", stickyNavBar);
 navToggle.addEventListener("click", overlayToggler);
 
 // Functions
+
+function loadContentDynamically(){
+    displayNewsItems(newsDB);
+    displayBenefits(benefitDB);
+    displayValueProps(valueDB);
+    displayTeamMembers(teamDB);
+};
 
 function displayTeamMembers(teamMembers){
     var displayTeam = teamMembers.map(member =>
@@ -137,30 +139,31 @@ function displayTeamMembers(teamMembers){
                 <p class="team-member-description">${member.desc}</p>
             </div>
         </li>`
-        ).join("");
+    ).join("");
     if(teamSection){
         teamSection.innerHTML = displayTeam;
         var teamMembers = teamSection.querySelectorAll(".team-toggler");
         teamMembers.forEach((teamMember) => {
             var memberImg = teamMember.querySelector(".team-toggler-link");
             var memberDetail = teamMember.querySelector(".team-toggler-details");
-            memberImg.addEventListener("click", function(){
+            memberImg.addEventListener("click", function() {
                 teamMembers.forEach((crewMember) => {
-                    var memberInfo = crewMember.querySelector(".team-toggler-details");
-                    if (memberInfo !== memberDetail) {
+                        var memberInfo = crewMember.querySelector(".team-toggler-details");
+                        if (memberInfo !== memberDetail) {
                             memberInfo.classList.remove("is-open");
                             crewMember.style = "";
                         }
-                });
+                    });
                 memberDetail.classList.toggle("is-open");
                 if (memberDetail.classList.contains("is-open")) {
                     teamMember.style.marginBottom = "212px";
                 } else {
                     teamMember.style = "";
-            }
-        })
-    })
-}};
+                };
+            });
+        });
+    };
+};
 
 function displayNewsItems(newsArticles){
     var displayNews = newsArticles.map(article =>
@@ -179,10 +182,11 @@ function displayNewsItems(newsArticles){
                 <p>Learn more</p> 
             </div>
         </div>`
-        ).join("");
+    ).join("");
     if(newsSlider){
         newsSlider.innerHTML = displayNews;
-}};
+    };
+};
 
 function displayBenefits(benefits){
     var displayBenefit = benefits.map(benefit =>
@@ -207,7 +211,7 @@ function displayValueProps(values){
             <p>${value.desc}</p>
             </div>
         </article>`
-        ).join("");
+    ).join("");
     if(valueSection){
         valueSection.innerHTML = displayValue;
     };
