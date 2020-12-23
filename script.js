@@ -142,28 +142,28 @@ function displayTeamMembers(teamMembers){
     ).join("");
     if(teamSection){
         teamSection.innerHTML = displayTeam;
-        var teamMembers = teamSection.querySelectorAll(".team-toggler");
-        teamMembers.forEach((teamMember) => {
-            var memberImg = teamMember.querySelector(".team-toggler-link");
-            var memberDetail = teamMember.querySelector(".team-toggler-details");
+        var groupMembers = teamSection.querySelectorAll(".team-toggler");
+        groupMembers.forEach((groupMember) => {
+            var memberImg = groupMember.querySelector(".team-toggler-link");
+            var memberDetail = groupMember.querySelector(".team-toggler-details");
             memberImg.addEventListener("click", function() {
-                teamMembers.forEach((crewMember) => {
-                        var memberInfo = crewMember.querySelector(".team-toggler-details");
-                        if (memberInfo !== memberDetail) {
-                            memberInfo.classList.remove("is-open");
-                            crewMember.style = "";
-                        }
-                    });
+                groupMembers.forEach((crewMember) => {
+                    var memberInfo = crewMember.querySelector(".team-toggler-details");
+                    if (memberInfo !== memberDetail) {
+                        memberInfo.classList.remove("is-open");
+                        crewMember.style = "";
+                    }
+                });
                 memberDetail.classList.toggle("is-open");
                 if (memberDetail.classList.contains("is-open")) {
-                    teamMember.style.marginBottom = "212px";
+                    groupMember.style.marginBottom = "212px";
                 } else {
-                    teamMember.style = "";
-                };
+                    groupMember.style = "";
+                }
             });
         });
-    };
-};
+    }
+}
 
 function displayNewsItems(newsArticles){
     var displayNews = newsArticles.map(article =>
