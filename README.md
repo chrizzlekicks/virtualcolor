@@ -1,6 +1,6 @@
 # VIRTUAL COLOR
 
-This is the project repo for the new AUROOM landing page. Check the current status here:
+Welcome to the repository of the new AUROOM landing page. Check the current status here:
 **[Virtual Color Landing Page](https://chrizzlekicks.github.io/virtualcolor/)**
 
 ## Project Description
