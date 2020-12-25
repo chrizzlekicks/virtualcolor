@@ -7,6 +7,9 @@ var newsSlider = document.querySelector(".news-slider");
 var benefitSection = document.querySelector(".benefits");
 var valueSection = document.querySelector(".value-container");
 var teamSection = document.querySelector(".team-members");
+var prevBtn = document.querySelector(".prevBtn");
+var nextBtn = document.querySelector(".nextBtn");
+var counter = 0;
 
 // Databases
 var newsDB = [
@@ -120,14 +123,14 @@ navToggle.addEventListener("click", overlayToggler);
 
 // Functions
 
-function loadContentDynamically(){
+function loadContentDynamically() {
     displayNewsItems(newsDB);
     displayBenefits(benefitDB);
     displayValueProps(valueDB);
     displayTeamMembers(teamDB);
-};
+}
 
-function displayTeamMembers(teamMembers){
+function displayTeamMembers(teamMembers) {
     var displayTeam = teamMembers.map(member =>
         `<li class="team-toggler" data-toggle-element="${member.id}">
             <div class="team-toggler-link">
@@ -140,7 +143,7 @@ function displayTeamMembers(teamMembers){
             </div>
         </li>`
     ).join("");
-    if(teamSection){
+    if (teamSection) {
         teamSection.innerHTML = displayTeam;
         var groupMembers = teamSection.querySelectorAll(".team-toggler");
         groupMembers.forEach((groupMember) => {
@@ -160,8 +163,8 @@ function displayTeamMembers(teamMembers){
                 } else {
                     groupMember.style = "";
                 }
-            });
-        });
+            })
+        })
     }
 }
 
@@ -183,12 +186,24 @@ function displayNewsItems(newsArticles){
             </div>
         </div>`
     ).join("");
-    if(newsSlider){
+    if (newsSlider) {
         newsSlider.innerHTML = displayNews;
-    };
-};
+        var articles = newsSlider.querySelectorAll(".news");
+        articles.forEach((article, index) => {
+            article.style.left = `${index * 100}%`;
+        });
+        prevBtn.addEventListener("click", function() {
+            counter--;
+            slideShow(articles);
+        });
+        nextBtn.addEventListener("click", function() {
+            counter++;
+            slideShow(articles);
+        });
+    }
+}
 
-function displayBenefits(benefits){
+function displayBenefits(benefits) {
     var displayBenefit = benefits.map(benefit =>
         `<article class="benefit">
         <img src="${benefit.img}" class="icon-benefit" alt="${benefit.title}">
@@ -196,12 +211,12 @@ function displayBenefits(benefits){
             <p>${benefit.desc}</p>
             </article>`
     ).join("");
-    if(benefitSection){
+    if (benefitSection) {
         benefitSection.innerHTML = displayBenefit;
-    };
-};
+    }
+}
 
-function displayValueProps(values){
+function displayValueProps(values) {
     var displayValue = values.map(value =>
         `<article class="value">
             <div class="value-number">
@@ -212,29 +227,41 @@ function displayValueProps(values){
             </div>
         </article>`
     ).join("");
-    if(valueSection){
+    if (valueSection) {
         valueSection.innerHTML = displayValue;
-    };
-};
+    }
+}
 
-function overlayToggler(){
+function overlayToggler() {
     navBar.classList.toggle("overlay");
     mobileNavBar.classList.toggle("menu-container-overlay--active");
-};
+}
 
-function stickyNavBar(){
+function stickyNavBar() {
     var sticky = navBar.offsetTop;
     var logo = document.querySelector(".logo-container");
-    if(window.scrollY > sticky){
+    if (window.scrollY > sticky) {
         navBar.classList.add("sticky-header");
         navContent.classList.add("sticky-menu");
         logo.style.marginLeft = "0";
-    } else{
+    } else {
         navBar.classList.remove("sticky-header");
         navContent.classList.remove("sticky-menu");
         logo.style = "none";
-    };
-};
+    }
+}
+
+function slideShow(slides) {
+    if (counter === slides.length) {
+        counter = 0;
+    }
+    if (counter < 0) {
+        counter = slides.length - 1;
+    }
+    slides.forEach((slide) => {
+        slide.style.transform = `translateX(-${counter * 100}%)`
+    })
+}
 
 // function teamToggler(event){
 //     var listItem = event.currentTarget.parentElement;
