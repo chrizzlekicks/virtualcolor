@@ -9,6 +9,7 @@ var valueSection = document.querySelector(".value-container");
 var teamSection = document.querySelector(".team-members");
 var prevBtn = document.querySelector(".prevBtn");
 var nextBtn = document.querySelector(".nextBtn");
+var arrowBtns = document.querySelectorAll(".slider-arrow");
 var counter = 0;
 
 // Databases
@@ -200,6 +201,7 @@ function displayNewsItems(newsArticles){
             counter++;
             slideShow(articles);
         });
+
     }
 }
 
@@ -259,17 +261,6 @@ function slideShow(slides) {
         counter = slides.length - 1;
     }
     slides.forEach((slide) => {
-        slide.style.transform = `translateX(-${counter * 100}%)`
+        slide.style.transform = `translateX(-${counter * 100}%)`;
     })
 }
-
-// function teamToggler(event){
-//     var listItem = event.currentTarget.parentElement;
-//     // teamSection.classList.toggle("has-open");
-//     listItem.lastElementChild.classList.toggle("is-open");
-//     if(listItem.lastElementChild.classList.contains("is-open")){
-//         listItem.style.marginBottom = "212px";
-//     } else {
-//         listItem.style = "";
-//     }
-// };

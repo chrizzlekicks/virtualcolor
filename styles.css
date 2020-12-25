@@ -1260,7 +1260,7 @@ MAIN NEWS
 }
 
 .news hr {
-    width: 100%;
+    width: 325px;
     margin: 15px 0;
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -1279,7 +1279,7 @@ MAIN NEWS
     .heading::before {
         height: 165px;
     }
-
+    
     .news-container {
         padding: 1rem;
     }
@@ -1294,6 +1294,10 @@ MAIN NEWS
         position: absolute;
         width: 360px;
         transition: all 0.5s ease-in-out;
+    }
+
+    .news hr {
+        width: 98%;
     }
     
     .slider-arrow {
@@ -1314,7 +1318,7 @@ MAIN NEWS
     .heading::before {
         height: 95px;
     }
-
+    
     .news-container {
         padding: 0.25rem;
     }
@@ -1335,6 +1339,10 @@ MAIN NEWS
         background-size: contain;
         width: 100%;
         height: auto;
+    }
+
+    .news hr {
+        width: 98%;
     }
     
     .slider-arrow {
@@ -1423,7 +1431,7 @@ FOOTER
     flex-wrap: wrap;
     margin: 0 auto;
     justify-content: space-between;
-    }
+}
 
 
 .footer-container {
