@@ -1,3 +1,10 @@
+// Import
+import links from "./links.js"
+import news from "./news.js"
+import benefits from "./benefits.js"
+import values from "./values.js"
+import team from "./team.js"
+
 // Global Variables
 var navBar = document.querySelector(".header-container");
 var navContent = document.querySelector(".menu-container");
@@ -8,148 +15,7 @@ var valueSection = document.querySelector(".value-container");
 var teamSection = document.querySelector(".team-members");
 var prevBtn = document.querySelector(".prevBtn");
 var nextBtn = document.querySelector(".nextBtn");
-var arrowBtns = document.querySelectorAll(".slider-arrow");
 var counter = 0;
-
-// Databases
-var links = [
-    {
-        sub: [
-            {
-                url: "auroom.html",
-                label: "Auroom"
-            },
-            {
-                url: "virtualcolor.html",
-                label: "Virtual Color"
-            },
-            {
-                url: "news.html",
-                label: "News"
-            },
-            {
-                url: "team.html",
-                label: "Team"
-            }
-        ],
-        touch: [
-            {
-                url: "login.html",
-                label: "Login"
-            },
-            {
-                url: "contact.html",
-                label: "Contact"
-            }
-        ],
-        main: {
-            url: "index.html"
-        }
-    }
-];
-var newsDB = [
-    {
-        img: "./Img/Blue in Sky 120-V494-3_thumb_closeup.png",
-        date: "01.02.2021",
-        title: "Launch of the new AUROOM website",
-        desc: "Description 1",
-    },
-    {
-        img: "./Img/P324_BASF_Automotive_Color_Trends_2020_2021.JPG",
-        date: "01.10.2020",
-        title: "Our designers present the newest automotive color trends",
-        desc: "Description 2"
-    },
-    {
-        img: "./Img/Blue in Sky 120-V494-3_thumb_medium_right.png",
-        date: "01.02.2021",
-        title: "New virtual AUVOTs released",
-        desc: "Description 3"
-    },
-];
-var benefitDB = [
-    {
-        img: "./Img/Online retail.png",
-        title: "Retail",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea porro dolores enim molestias accusamus nisi dicta voluptatum error distinctio dolorem, voluptatibus laborum aliquam! Fuga temporibus repellendus rem nihil molestiae nostrum illum saepe alias, veritatis aspernatur omnis? Deleniti corporis ad."
-    },
-    {
-        img: "./Img/Design.png ",
-        title: "Design",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea porro dolores enim molestias accusamus nisi dicta voluptatum error distinctio dolorem, voluptatibus laborum aliquam! Fuga temporibus repellendus rem nihil molestiae nostrum illum saepe alias, veritatis aspernatur omnis? Deleniti corporis ad."
-    },
-    {
-        img: "./Img/Showroom.png",
-        title: "Showroom",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea porro dolores enim molestias accusamus nisi dicta voluptatum error distinctio dolorem, voluptatibus laborum aliquam! Fuga temporibus repellendus rem nihil molestiae nostrum illum saepe alias, veritatis aspernatur omnis? Deleniti corporis ad."
-    },
-];
-var valueDB = [
-    {
-        id: 1,
-        title: "1",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea porro dolores enim molestias accusamus nisi dicta voluptatum error distinctio dolorem, voluptatibus laborum aliquam! Fuga temporibus repellendus rem nihil molestiae nostrum illum saepe alias, veritatis aspernatur omnis? Deleniti corporis ad."
-    },
-    {
-        id: 2,
-        title: "2",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea porro dolores enim molestias accusamus nisi dicta voluptatum error distinctio dolorem, voluptatibus laborum aliquam! Fuga temporibus repellendus rem nihil molestiae nostrum illum saepe alias, veritatis aspernatur omnis? Deleniti corporis ad."
-    },
-    {
-        id: 3,
-        title: "3",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea porro dolores enim molestias accusamus nisi dicta voluptatum error distinctio dolorem, voluptatibus laborum aliquam! Fuga temporibus repellendus rem nihil molestiae nostrum illum saepe alias, veritatis aspernatur omnis? Deleniti corporis ad."
-    },
-    {
-        id: 4,
-        title: "4",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea porro dolores enim molestias accusamus nisi dicta voluptatum error distinctio dolorem, voluptatibus laborum aliquam! Fuga temporibus repellendus rem nihil molestiae nostrum illum saepe alias, veritatis aspernatur omnis? Deleniti corporis ad."
-    },
-]
-var teamDB = [
-    {
-        id: "mark-gutjahr",
-        img: "./Img/Mark.png",
-        title: "Head of Design",
-        name: "Mark Gutjahr",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
-    },
-    {
-        id: "michaela-finkenzeller",
-        img: "./Img/Michaela.png",
-        title: "Designer",
-        name: "Michaela Finkenzeller",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
-    },
-    {
-        id: "benjamin-lanfer",
-        img: "./Img/Benji.png",
-        title: "Color Scientist",
-        name: "Benjamin Lanfer",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
-    },
-    {
-        id: "jens-wegner",
-        img: "./Img/Jens.png",
-        title: "Head of Digital Business Solutions",
-        name: "Jens Wegner",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
-    },
-    {
-        id: "florina-trost",
-        img: "./Img/Flowrina.png",
-        title: "Designer",
-        name: "Florina Trost",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis."
-    },
-    {
-        id: "chris-schimetschka",
-        img: "./Img/Chrizzle.png",
-        title: "Product Manager",
-        name: "Christian Schimetschka",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis?"
-    },
-];
 
 // Global Event Listeners
 window.addEventListener("DOMContentLoaded", loadContentDynamically);
@@ -158,20 +24,20 @@ window.addEventListener("scroll", stickyNavBar);
 // Functions
 function loadContentDynamically() {
     displayMenu(links);
-    displayNewsItems(newsDB);
-    displayBenefits(benefitDB);
-    displayValueProps(valueDB);
-    displayTeamMembers(teamDB);
+    displayNewsItems(news);
+    displayBenefits(benefits);
+    displayValueProps(values);
+    displayTeamMembers(team);
 }
 
 function displayMenu(items) {
     navContent.innerHTML = items.map((item) => {
-        var { sub, touch, main } = item;
+        var { toggler, sub, touch, main, btns } = item;
         return `<div class="menu-content">
             <nav class="top-nav">
                 <div class="nav-toggle">
                     <button class="hamburger-btn" type="button">
-                        <img src="./Img/BASF Icon - menue.png" alt="Hamburger-Menu" id="hamburger">
+                        <img src="${toggler.icon}" alt="${toggler.label}" id="${toggler.label}">
                     </button>
                 </div>
                 <ul class="basf-menu">
@@ -183,8 +49,9 @@ function displayMenu(items) {
                     ${touch.map((link) => {
                         return `<li><a href="${link.url}">${link.label}</a></li>`
                     }).join("")}
-                    <img src="./Img/BASF Icon - search.svg" id="search" alt="search">
-                    <img src="./Img/BASF Icon - world.svg" id="world" alt="language">
+                    ${btns.map((btn) => {
+                        return `<img src="${btn.icon}" id="${btn.label}" alt="${btn.label}">`  
+                    }).join("")}
                 </ul>
             </nav>
             <div class="logo-container">
@@ -280,12 +147,12 @@ function displayNewsItems(newsArticles){
     }
 }
 
-function displayBenefits(benefits) {
-    var displayBenefit = benefits.map(benefit =>
+function displayBenefits(items) {
+    var displayBenefit = items.map(item =>
         `<article class="benefit">
-        <img src="${benefit.img}" class="icon-benefit" alt="${benefit.title}">
-            <h4>${benefit.title}</h4>
-            <p>${benefit.desc}</p>
+        <img src="${item.img}" class="icon-benefit" alt="${item.title}">
+            <h4>${item.title}</h4>
+            <p>${item.desc}</p>
             </article>`
     ).join("");
     if(benefitSection) {
@@ -293,14 +160,14 @@ function displayBenefits(benefits) {
     }
 }
 
-function displayValueProps(values) {
-    var displayValue = values.map(value =>
+function displayValueProps(elements) {
+    var displayValue = elements.map(element =>
         `<article class="value">
             <div class="value-number">
-            <h1>${value.id}</h1>
+            <h1>${element.id}</h1>
             </div>
             <div class="value-text">
-            <p>${value.desc}</p>
+            <p>${element.desc}</p>
             </div>
         </article>`
     ).join("");
@@ -311,7 +178,7 @@ function displayValueProps(values) {
 
 function stickyNavBar() {
     var logo = navBar.querySelector(".logo-container");
-    if(window.pageYOffset > 160) {
+    if(window.scrollY > navBar.offsetTop) {
         navBar.classList.add("sticky-header");
         navContent.classList.add("sticky-menu");
         logo.style.marginLeft = "0";
