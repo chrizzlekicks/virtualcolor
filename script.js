@@ -1,5 +1,4 @@
 // Global Variables
-var navToggle = document.querySelector(".nav-toggle");
 var navBar = document.querySelector(".header-container");
 var navContent = document.querySelector(".menu-container");
 var mobileNavBar = document.querySelector(".menu-container-overlay");
@@ -13,6 +12,41 @@ var arrowBtns = document.querySelectorAll(".slider-arrow");
 var counter = 0;
 
 // Databases
+var links = [
+    {
+        sub: [
+            {
+                url: "auroom.html",
+                label: "Auroom"
+            },
+            {
+                url: "virtualcolor.html",
+                label: "Virtual Color"
+            },
+            {
+                url: "news.html",
+                label: "News"
+            },
+            {
+                url: "team.html",
+                label: "Team"
+            }
+        ],
+        touch: [
+            {
+                url: "login.html",
+                label: "Login"
+            },
+            {
+                url: "contact.html",
+                label: "Contact"
+            }
+        ],
+        main: {
+            url: "index.html"
+        }
+    }
+];
 var newsDB = [
     {
         img: "./Img/Blue in Sky 120-V494-3_thumb_closeup.png",
@@ -120,15 +154,56 @@ var teamDB = [
 // Global Event Listeners
 window.addEventListener("DOMContentLoaded", loadContentDynamically);
 window.addEventListener("scroll", stickyNavBar);
-navToggle.addEventListener("click", overlayToggler);
 
 // Functions
-
 function loadContentDynamically() {
+    displayMenu(links);
     displayNewsItems(newsDB);
     displayBenefits(benefitDB);
     displayValueProps(valueDB);
     displayTeamMembers(teamDB);
+}
+
+function displayMenu(items) {
+    navContent.innerHTML = items.map((item) => {
+        var { sub, touch, main } = item;
+        return `<div class="menu-content">
+            <nav class="top-nav">
+                <div class="nav-toggle">
+                    <button class="hamburger-btn" type="button">
+                        <img src="./Img/BASF Icon - menue.png" alt="Hamburger-Menu" id="hamburger">
+                    </button>
+                </div>
+                <ul class="basf-menu">
+                    ${sub.map((link) => {
+                        return `<li><a href="${link.url}">${link.label}</a></li>`
+                    }).join("")}
+                </ul>
+                <ul class="menu-action">
+                    ${touch.map((link) => {
+                        return `<li><a href="${link.url}">${link.label}</a></li>`
+                    }).join("")}
+                    <img src="./Img/BASF Icon - search.svg" id="search" alt="search">
+                    <img src="./Img/BASF Icon - world.svg" id="world" alt="language">
+                </ul>
+            </nav>
+            <div class="logo-container">
+                <a href="${main.url}"><div class="logo"></div></a>
+            </div>
+        </div>`;
+    });
+    mobileNavBar.innerHTML = items.map((item) => {
+        var { sub } = item;
+        return `<div class="menu-content-overlay">
+            <ul class="basf-menu-mobile">
+            ${sub.map((link) => {
+                return `<li class="menu-link"><a href="${link.url}">${link.label}</a></li>`
+            }).join("")}
+            </ul>
+        </div>`;
+    });
+    var navToggle = navBar.querySelector(".nav-toggle");
+    navToggle.addEventListener("click", overlayToggler);
 }
 
 function displayTeamMembers(teamMembers) {
@@ -144,7 +219,7 @@ function displayTeamMembers(teamMembers) {
             </div>
         </li>`
     ).join("");
-    if (teamSection) {
+    if(teamSection) {
         teamSection.innerHTML = displayTeam;
         var groupMembers = teamSection.querySelectorAll(".team-toggler");
         groupMembers.forEach((groupMember) => {
@@ -153,13 +228,13 @@ function displayTeamMembers(teamMembers) {
             memberImg.addEventListener("click", function() {
                 groupMembers.forEach((crewMember) => {
                     var memberInfo = crewMember.querySelector(".team-toggler-details");
-                    if (memberInfo !== memberDetail) {
+                    if(memberInfo !== memberDetail) {
                         memberInfo.classList.remove("is-open");
                         crewMember.style = "";
                     }
                 });
                 memberDetail.classList.toggle("is-open");
-                if (memberDetail.classList.contains("is-open")) {
+                if(memberDetail.classList.contains("is-open")) {
                     groupMember.style.marginBottom = "212px";
                 } else {
                     groupMember.style = "";
@@ -187,7 +262,7 @@ function displayNewsItems(newsArticles){
             </div>
         </div>`
     ).join("");
-    if (newsSlider) {
+    if(newsSlider) {
         newsSlider.innerHTML = displayNews;
         var articles = newsSlider.querySelectorAll(".news");
         articles.forEach((article, index) => {
@@ -213,7 +288,7 @@ function displayBenefits(benefits) {
             <p>${benefit.desc}</p>
             </article>`
     ).join("");
-    if (benefitSection) {
+    if(benefitSection) {
         benefitSection.innerHTML = displayBenefit;
     }
 }
@@ -229,20 +304,14 @@ function displayValueProps(values) {
             </div>
         </article>`
     ).join("");
-    if (valueSection) {
+    if(valueSection) {
         valueSection.innerHTML = displayValue;
     }
 }
 
-function overlayToggler() {
-    navBar.classList.toggle("overlay");
-    mobileNavBar.classList.toggle("menu-container-overlay--active");
-}
-
 function stickyNavBar() {
-    var sticky = navBar.offsetTop;
-    var logo = document.querySelector(".logo-container");
-    if (window.scrollY > sticky) {
+    var logo = navBar.querySelector(".logo-container");
+    if(window.pageYOffset > 160) {
         navBar.classList.add("sticky-header");
         navContent.classList.add("sticky-menu");
         logo.style.marginLeft = "0";
@@ -253,11 +322,16 @@ function stickyNavBar() {
     }
 }
 
+function overlayToggler() {
+    navBar.classList.toggle("overlay");
+    mobileNavBar.classList.toggle("active");
+}
+
 function slideShow(slides) {
-    if (counter === slides.length) {
+    if(counter === slides.length) {
         counter = 0;
     }
-    if (counter < 0) {
+    if(counter < 0) {
         counter = slides.length - 1;
     }
     slides.forEach((slide) => {

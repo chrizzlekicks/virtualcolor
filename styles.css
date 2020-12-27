@@ -134,6 +134,7 @@ HEADER
     background: transparent;
     display: inline-block;
     z-index: 1;
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-container::before {
@@ -311,7 +312,7 @@ HEADER
         height: 60px;
     }
 
-    .overlay {
+    .header-container.overlay {
         overflow: hidden;
         width: 100%;
         height: 100%;
@@ -328,11 +329,11 @@ HEADER
         display: none;
     }
 
-    .menu-container-overlay--active {
+    .menu-container-overlay.active {
         margin-left: auto;
         margin-right: auto;
         width: 90.6%;
-        max-width: 1246px;
+        max-width: 1244px;
         flex: 0 0 auto;
         align-items: center;
         display: flex;
@@ -404,7 +405,7 @@ HEADER
         display: none;
     }
 
-    .overlay {
+    .header-container.overlay {
         overflow: hidden;
         width: 100%;
         height: 100%;
@@ -417,7 +418,7 @@ HEADER
         flex-direction: column;
     }
 
-    .menu-container-overlay--active {
+    .menu-container-overlay.active {
         margin-left: auto;
         margin-right: auto;
         width: 90.6%;
@@ -731,7 +732,6 @@ VIRTUAL COLOR
         margin-left:10%
     }
 }
-
 
 /*
 ===========
@@ -1089,16 +1089,12 @@ MAIN TEAM
     margin-left: auto;
 }
 
-.info--active {
-    opacity: 1;
-}
-
 .team-toggler-link {
     padding: 1rem;
 }
 
 .team-toggler-link img {
-    transition: ease-out 0.5s;
+    transition: ease-in 0.25s;
     width: 250px;
     height: 250px;
     display: block;
@@ -1112,9 +1108,10 @@ MAIN TEAM
 .team-toggler-details {
     display: none;
     overflow: hidden;
+    transition: all 1s ease-in-out;
 }
 
-.is-open {
+.team-toggler-details.is-open {
     display: block;
     overflow: visible;
     position: absolute;
