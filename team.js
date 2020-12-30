@@ -1,4 +1,4 @@
-var team = [
+const team = [
     {
         id: "mark-gutjahr",
         img: "./Img/Mark.png",

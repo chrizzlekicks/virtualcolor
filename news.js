@@ -1,4 +1,4 @@
-var news = [
+const news = [
     {
         img: "./Img/Blue in Sky 120-V494-3_thumb_closeup.png",
         date: "01.02.2021",

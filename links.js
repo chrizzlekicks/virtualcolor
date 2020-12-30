@@ -1,4 +1,4 @@
-var links = [
+const links = [
     {
         toggler: {
             icon: "./Img/BASF Icon - menue.png",
@@ -42,9 +42,98 @@ var links = [
                 label: "world"
             }
         ],
-        main: {
-            url: "index.html",
-        }
+        main: "index.html",
+        social: [
+            {
+                icon: "fa fa-facebook fa-3x",
+                url: "#"
+            },
+            {
+                icon: "fa fa-twitter-square fa-3x",
+                url: "#"
+            },
+            {
+                icon: "fa fa-instagram fa-3x",
+                url: "#"
+            },
+            {
+                icon: "fa fa-flickr fa-3x",
+                url: "#"
+            }
+        ],
+        challenges: [
+            {
+                url: "#",
+                label: "Urban Living"
+            },
+            {
+                url: "#",
+                label: "Food"
+            },
+            {
+                url: "#",
+                label: "Smart Energy"
+            },
+            {
+                url: "#",
+                label: "Featured Topic"
+            }
+        ],
+        solutions: [
+            {
+                url: "#",
+                label: "Urban Living"
+            },
+            {
+                url: "#",
+                label: "Food"
+            },
+            {
+                url: "#",
+                label: "Smart Energy"
+            },
+            {
+                url: "#",
+                label: "Featured Topic"
+            }
+        ],
+        about: [
+            {
+                url: "#",
+                label: "Urban Living"
+            },
+            {
+                url: "#",
+                label: "Food"
+            },
+            {
+                url: "#",
+                label: "Smart Energy"
+            },
+            {
+                url: "#",
+                label: "Featured Topic"
+            }
+        ],
+        contact: [
+            {
+                url: "#",
+                label: "Urban Living"
+            },
+            {
+                url: "#",
+                label: "Food"
+            },
+            {
+                url: "#",
+                label: "Smart Energy"
+            },
+            {
+                url: "#",
+                label: "Featured Topic"
+            }
+        ],
+        legal: "Copyright © BASF SE 2021",
     }
 ];
 

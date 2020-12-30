@@ -1,4 +1,4 @@
-var values = [
+const values = [
     {
         id: 1,
         title: "1",

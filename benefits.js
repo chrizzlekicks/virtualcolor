@@ -1,4 +1,4 @@
-var benefits = [
+const benefits = [
     {
         img: "./Img/Online retail.png",
         title: "Retail",

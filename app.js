@@ -6,33 +6,35 @@ import values from "./values.js"
 import team from "./team.js"
 
 // Global Variables
-var navBar = document.querySelector(".header-container");
-var navContent = document.querySelector(".menu-container");
-var mobileNavBar = document.querySelector(".menu-container-overlay");
-var newsSlider = document.querySelector(".news-slider");
-var benefitSection = document.querySelector(".benefits");
-var valueSection = document.querySelector(".value-container");
-var teamSection = document.querySelector(".team-members");
-var prevBtn = document.querySelector(".prevBtn");
-var nextBtn = document.querySelector(".nextBtn");
-var counter = 0;
+const navBar = document.querySelector(".header-container");
+const navContent = document.querySelector(".menu-container");
+const mobileNavBar = document.querySelector(".menu-container-overlay");
+const footer = document.querySelector(".footer-container");
+const newsSlider = document.querySelector(".news-slider");
+const benefitSection = document.querySelector(".benefits");
+const valueSection = document.querySelector(".value-container");
+const teamSection = document.querySelector(".team-members");
+const prevBtn = document.querySelector(".prevBtn");
+const nextBtn = document.querySelector(".nextBtn");
+let counter = 0;
 
 // Global Event Listeners
-window.addEventListener("DOMContentLoaded", loadContentDynamically);
+window.addEventListener("DOMContentLoaded", setupUI);
 window.addEventListener("scroll", stickyNavBar);
 
 // Functions
-function loadContentDynamically() {
-    displayMenu(links);
+function setupUI() {
+    displayNavBar(links);
+    displayFooter(links);
     displayNewsItems(news);
     displayBenefits(benefits);
     displayValueProps(values);
     displayTeamMembers(team);
 }
 
-function displayMenu(items) {
+function displayNavBar(items) {
     navContent.innerHTML = items.map((item) => {
-        var { toggler, sub, touch, main, btns } = item;
+        const { toggler, sub, touch, main, btns } = item;
         return `<div class="menu-content">
             <nav class="top-nav">
                 <div class="nav-toggle">
@@ -55,12 +57,12 @@ function displayMenu(items) {
                 </ul>
             </nav>
             <div class="logo-container">
-                <a href="${main.url}"><div class="logo"></div></a>
+                <a href="${main}"><div class="logo"></div></a>
             </div>
         </div>`;
     });
     mobileNavBar.innerHTML = items.map((item) => {
-        var { sub } = item;
+        const { sub } = item;
         return `<div class="menu-content-overlay">
             <ul class="basf-menu-mobile">
             ${sub.map((link) => {
@@ -69,12 +71,51 @@ function displayMenu(items) {
             </ul>
         </div>`;
     });
-    var navToggle = navBar.querySelector(".nav-toggle");
+    const navToggle = navBar.querySelector(".nav-toggle");
     navToggle.addEventListener("click", overlayToggler);
 }
 
+function displayFooter(items) {
+    footer.innerHTML = items.map((item) => {
+        const { social, challenges, solutions, about, contact, legal} = item;
+        return `<div class="socialmedia">
+        <div class="socialmenu">
+            <div class="socialmenu-header">
+                <h2 class="footer-h2">Folgen Sie uns</h2>
+            </div>
+                <div class="socialmenu-icons">
+                    <ul>
+                        ${social.map((link) => `<li class="social-items"><a href="${link.url}"><i class="${link.icon}"></i></a></li>`).join("")}
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <div class="footer-nav">
+        	<div class="footer-heading footer-1">
+                <h2>Challenges</h2>
+                ${challenges.map(link => `<a href="${link.url}">${link.label}</a>`).join("")} 
+            </div>
+            <div class="footer-heading footer-2">
+                <h2>Solutions</h2>
+                ${solutions.map(link => `<a href="${link.url}">${link.label}</a>`).join("")} 
+            </div>
+            <div class="footer-heading footer-3">
+                <h2>About Us</h2>
+                ${about.map(link => `<a href="${link.url}">${link.label}</a>`).join("")} 
+            </div>
+            <div class="footer-heading footer-4">
+                <h2>Contact Us</h2>
+                ${contact.map(link => `<a href="${link.url}">${link.label}</a>`).join("")}  
+            </div>
+        </div>
+            <div class="legal">
+                <p>${legal}</p>
+            </div>`
+    })
+}
+
 function displayTeamMembers(teamMembers) {
-    var displayTeam = teamMembers.map(member =>
+    const displayTeam = teamMembers.map(member =>
         `<li class="team-toggler" data-toggle-element="${member.id}">
             <div class="team-toggler-link">
                 <img src="${member.img}" alt="${member.name}">
@@ -88,13 +129,13 @@ function displayTeamMembers(teamMembers) {
     ).join("");
     if(teamSection) {
         teamSection.innerHTML = displayTeam;
-        var groupMembers = teamSection.querySelectorAll(".team-toggler");
+        const groupMembers = teamSection.querySelectorAll(".team-toggler");
         groupMembers.forEach((groupMember) => {
-            var memberImg = groupMember.querySelector(".team-toggler-link");
-            var memberDetail = groupMember.querySelector(".team-toggler-details");
+            const memberImg = groupMember.querySelector(".team-toggler-link");
+            const memberDetail = groupMember.querySelector(".team-toggler-details");
             memberImg.addEventListener("click", function() {
                 groupMembers.forEach((crewMember) => {
-                    var memberInfo = crewMember.querySelector(".team-toggler-details");
+                    const memberInfo = crewMember.querySelector(".team-toggler-details");
                     if(memberInfo !== memberDetail) {
                         memberInfo.classList.remove("is-open");
                         crewMember.style = "";
@@ -112,7 +153,7 @@ function displayTeamMembers(teamMembers) {
 }
 
 function displayNewsItems(newsArticles){
-    var displayNews = newsArticles.map(article =>
+    const displayNews = newsArticles.map(article =>
         `<div class="news">
             <img src="${article.img}" alt="${article.title}" width="325px" height="200px">
             <p class="date">${article.date}</p>
@@ -131,7 +172,7 @@ function displayNewsItems(newsArticles){
     ).join("");
     if(newsSlider) {
         newsSlider.innerHTML = displayNews;
-        var articles = newsSlider.querySelectorAll(".news");
+        const articles = newsSlider.querySelectorAll(".news");
         articles.forEach((article, index) => {
             article.style.left = `${index * 100}%`;
         });
@@ -143,12 +184,11 @@ function displayNewsItems(newsArticles){
             counter++;
             slideShow(articles);
         });
-
     }
 }
 
 function displayBenefits(items) {
-    var displayBenefit = items.map(item =>
+    const displayBenefit = items.map(item =>
         `<article class="benefit">
         <img src="${item.img}" class="icon-benefit" alt="${item.title}">
             <h4>${item.title}</h4>
@@ -161,7 +201,7 @@ function displayBenefits(items) {
 }
 
 function displayValueProps(elements) {
-    var displayValue = elements.map(element =>
+    const displayValue = elements.map(element =>
         `<article class="value">
             <div class="value-number">
             <h1>${element.id}</h1>
@@ -177,7 +217,7 @@ function displayValueProps(elements) {
 }
 
 function stickyNavBar() {
-    var logo = navBar.querySelector(".logo-container");
+    let logo = navBar.querySelector(".logo-container");
     if(window.scrollY > navBar.offsetTop) {
         navBar.classList.add("sticky-header");
         navContent.classList.add("sticky-menu");
