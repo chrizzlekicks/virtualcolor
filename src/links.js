@@ -1,7 +1,7 @@
 const links = [
     {
         toggler: {
-            icon: "./Img/BASF Icon - menue.png",
+            icon: "./assets/BASF Icon - menue.png",
             label: "hamburger"
         },
         sub: [
@@ -24,7 +24,7 @@ const links = [
         ],
         touch: [
             {
-                url: "login.html",
+                url: "https://auroom.basf.com",
                 label: "Login"
             },
             {
@@ -34,11 +34,11 @@ const links = [
         ],
         btns: [
             {
-                icon: "./Img/BASF Icon - search.svg",
+                icon: "./assets/BASF Icon - search.svg",
                 label: "search"
             },
             {
-                icon: "./Img/BASF Icon - world.svg",
+                icon: "./assets/BASF Icon - world.svg",
                 label: "world"
             }
         ],
