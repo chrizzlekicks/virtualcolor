@@ -1,6 +1,6 @@
 const displayValueProps = (elements) => {
     const valueSection = document.querySelector(".value-container");
-    const displayValue = elements.map(element => `<article class="value">
+    const displayValue = elements.map(element => `<article class="value" data-aos="fade-in-up">
             <div class="value-number">
             <h1>${element.id}</h1>
             </div>

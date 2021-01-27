@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>AUROOM</title>
 </head>
 <body>
@@ -15,44 +16,44 @@
     <main class="responsive-grid">
         <section class="imgs auroom-hero">
             <div class="hero-items">
-                <h1 class="auroom-hero-text">Welcome to AUROOM, the Go-To place for designers! And the future of Virtual Color!</h1>
+                <h1 class="hero-text">Welcome to AUROOM, the Go-To place for designers! And the future of Virtual Color!</h1>
                 <button class="contact-btn">Try it now</button>
             </div>
         </section>
-        <section class="containers-img-right">
+        <section class="containers-img-right" data-aos="fade-in-up">
             <div class="see-text">
-                <h2>See the beauty of virtual color from any angle</h2>
+                <h1>See the beauty of virtual color from any angle</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus impedit ratione earum sint assumenda doloribus.</p>
             </div>
             <div class="imgs see-img"></div>
         </section>
-        <section class="containers-img-left">
+        <section class="containers-img-left" data-aos="fade-in-up">
             <div class="imgs lib-img"></div>
             <div class="lib-text">
-                <h2>Find what you need in our comprehensive Color Library</h2>
+                <h1>Find what you need in our comprehensive Color Library</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias reprehenderit nemo, consequuntur assumenda cupiditate voluptates.</p>
             </div>
         </section>
-        <section class="containers-img-right">
+        <section class="containers-img-right" data-aos="fade-in-up">
             <div class="trend-text">
-                <h2>Get the latest Trend Collection</h2>
+                <h1>Get the latest Trend Collection</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quisquam enim eum laboriosam nostrum ipsum.</p>
             </div>
-            <div class="imgs trend-img"> </div>
+            <div class="imgs trend-img"></div>
         </section>
-        <section class="containers-img-left">
+        <section class="containers-img-left" data-aos="fade-in-up">
             <div class="imgs compare-img"></div>
             <div class="compare-text">
-                <h2>Compare different virtual colors</h2>
+                <h1>Compare different virtual colors</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque cum consectetur fugiat sit commodi nam.</p>
             </div>
         </section>
         <section class="benefit-container">
-            <h2 class="hero-text">Benefits</h2>
+            <h1 class="hero-text">Benefits</h2>
             <div class="benefits"></div>
         </section>
         <section class="hero-items final-hero">
-            <h3 class="hero-text">Interested in trying out? Contact us right now!</h3>
+            <h2 class="hero-text">Interested in trying out? Contact us right now!</h3>
             <button class="contact-btn">Get in touch</button>
         </section>
     </main>
@@ -60,5 +61,12 @@
         <footer class="footer-container"></footer>
     </div>
     <script type="module" src="./app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 300,
+          duration: 1000
+      });
+    </script>
    </body>
 </html>

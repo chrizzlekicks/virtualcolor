@@ -1,6 +1,6 @@
 const displayTeamMembers = (teamMembers) => {
     const teamSection = document.querySelector(".team-members");
-    const displayTeam = teamMembers.map(member => `<li class="team-toggler" data-toggle-element="${member.id}">
+    const displayTeam = teamMembers.map(member => `<li class="team-toggler" data-toggle-element="${member.id}" data-aos="fade-in-up">
             <div class="team-toggler-link">
                 <img src="${member.img}" alt="${member.name}">
             </div>
@@ -16,17 +16,15 @@ const displayTeamMembers = (teamMembers) => {
         const groupMembers = teamSection.querySelectorAll(".team-toggler");
         groupMembers.forEach((groupMember) => {
             const memberImg = groupMember.querySelector(".team-toggler-link");
-            const memberDetail = groupMember.querySelector(".team-toggler-details");
             memberImg.addEventListener("click", () => {
                 groupMembers.forEach((crewMember) => {
-                    const memberInfo = crewMember.querySelector(".team-toggler-details");
-                    if (memberInfo !== memberDetail) {
-                        memberInfo.classList.remove("is-open");
+                    if (crewMember !== groupMember) {
+                        crewMember.classList.remove("is-open");
                         crewMember.style = "";
                     }
                 });
-                memberDetail.classList.toggle("is-open");
-                if (memberDetail.classList.contains("is-open")) {
+                groupMember.classList.toggle("is-open");
+                if (groupMember.classList.contains("is-open")) {
                     groupMember.style.marginBottom = "212px";
                 } else {
                     groupMember.style = "";

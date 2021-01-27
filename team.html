@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Team</title>
 </head>
 <body>
@@ -18,14 +19,14 @@
             <div class="hero-items">
                 <h1 class="hero-text">Together we want to design the future of color. And these are our core values.</h1>
             </div>
-                <div class="value-container"></div>
+                <div class="value-container" data-aos="fade-in-up"></div>
         </section>
         <section class="team-container">
             <h1 class="hero-text">Our Team</h1>
             <ul class="team-members"></ul>
         </section>
         <section class="hero-items final-hero">
-            <h3 class="hero-text">Do you want to be part of our journey?</h3>
+            <h2 class="hero-text">Do you want to be part of our journey?</h3>
             <button class="contact-btn">Get in touch</button>
         </section>
     </main>
@@ -33,5 +34,12 @@
         <footer class="footer-container"></footer>
     </div>
     <script type="module" src="./app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 300,
+          duration: 1000
+      });
+    </script>
 </body>
 </html>
