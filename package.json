@@ -1,0 +1,26 @@
+{
+  "name": "virtualcolor",
+  "version": "1.0.0",
+  "description": "landing page for virtual color",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrizzlekicks/virtualcolor.git"
+  },
+  "author": "chris schimetschka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrizzlekicks/virtualcolor/issues"
+  },
+  "homepage": "https://github.com/chrizzlekicks/virtualcolor#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
