@@ -7,7 +7,7 @@ import { displayNavBar, stickyNavBar } from "./modules/displayNavBar.js"
 import displayFooter from "./modules/displayFooter.js"
 import displayNewsItems from "./modules/displayNewsItems.js"
 import displayBenefits from "./modules/displayBenefits.js"
-import displayValueProps from ".//modules/displayValueProps.js"
+import displayValueProps from "./modules/displayValueProps.js"
 import displayTeamMembers from "./modules/displayTeamMembers.js"
 
 const setupUI = () => {

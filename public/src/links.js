@@ -6,19 +6,19 @@ const links = [
         },
         sub: [
             {
-                url: "auroom.html",
+                url: "auroom",
                 label: "Auroom"
             },
             {
-                url: "virtualcolor.html",
+                url: "virtualcolor",
                 label: "Virtual Color"
             },
             {
-                url: "news.html",
+                url: "news",
                 label: "News"
             },
             {
-                url: "team.html",
+                url: "team",
                 label: "Team"
             }
         ],
@@ -28,7 +28,7 @@ const links = [
                 label: "Login"
             },
             {
-                url: "contact.html",
+                url: "contact",
                 label: "Contact"
             }
         ],
@@ -42,7 +42,7 @@ const links = [
                 label: "world"
             }
         ],
-        main: "index.html",
+        main: "/",
         social: [
             {
                 icon: "fa fa-facebook fa-3x",

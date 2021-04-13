@@ -25,6 +25,8 @@ After devising a rough IA and setting the goals for the website, we quickly star
 * HTML5: used for basic structure, some hard-coded content, images, etc.
 * CSS3: styling of entire page, responsive web design, animations, etc.
 * Vanilla JavaScript: interactivity, e.g. sticky navbar, navbar toggles, collapsibles, storing content within script and dynamice rendering
+* NodeJS: JavaScript runtime engine used to write server-side JS code
+* ExpressJS: minimalistic web framework for JavaScript to set up servers, APIs, etc.
 
 ## Next Steps and Functions to Add
 
@@ -33,9 +35,9 @@ Even though the learning journey is over now (in total 3 months of online course
 * fill in more content and get rid of lorem ipsum placeholders
 * add additional animations, slide shows, etc.
 * provide a contact form for clients
-* set up server side scripting, e.g. via Node.js
 * set up databases for content
 * work with SCSS to improve readability of CSS code
+* work with module bundlers, e.g. webpack
 * etc.
 
 Do you have any questions, feedback, remarks, etc.? Get in touch with us!
