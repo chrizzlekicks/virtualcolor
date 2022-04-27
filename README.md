@@ -5,15 +5,6 @@ Welcome to the repository of the new AUROOM landing page. Check the current stat
 
 ## Project Description
 
-This project started as a Web Dev learning experience powered by [BASF](www.basf.com) and [edyoucated](www.edyoucated.org) and evolved into something more than that. @stephanus1 and myself embarked on a journey to learn the craftsmanship of Web Development, but eventually we got hooked and decided to build a full product landing page for one of our company's digital products (_AUROOM_).
-
-The learning journey essentially encompassed of two steps:
-1. Online courses
-    * learn the basics of HTML, CSS, JavaScript
-    * dive into advanced topics, e.g. NodeJS for server-side coding and Bootstrap for a modern, grid-based CSS framework
-2. Coding Project
-    * apply what was learned
-
 In order to realize a product page at a larger scale, we had to plan ahead and come up with a general structure. We therefore decided to put our ideas together in a Miro board. The outcome can be found below.
 
 ![Information Architecture](https://github.com/chrizzlekicks/virtualcolor/blob/main/Img/AUROOM_Landing_Page-Information_Architecture.jpg)
