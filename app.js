@@ -1,8 +1,8 @@
-import links from './modules/links.js';
-import news from './modules/news.js';
-import benefits from './modules/benefits.js';
-import values from './modules/values.js';
-import team from './modules/team.js';
+import links from './data/links.js';
+import news from './data/news.js';
+import benefits from './data/benefits.js';
+import values from './data/values.js';
+import team from './data/team.js';
 import { displayNavBar, stickyNavBar } from './modules/displayNavBar.js';
 import displayFooter from './modules/displayFooter.js';
 import displayNewsItems from './modules/displayNewsItems.js';
