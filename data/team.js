@@ -37,7 +37,7 @@ const team = [
 	{
 		id: 'chris-schimetschka',
 		img: './assets/Chrizzle.png',
-		title: 'Software Developer',
+		title: 'Software Engineer',
 		name: 'Christian Schimetschka',
 		desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus optio dolorem eius assumenda, cupiditate dicta maiores iste deleniti hic repellat vero, dignissimos necessitatibus debitis?',
 	},
